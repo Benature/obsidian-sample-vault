@@ -111,23 +111,6 @@
 	visibility: hidden;
 }
 
-.metadata-property[data-property-key="Github"] .metadata-property-key::after {
-	content: "";
-	background-image: url("https://github.com/favicon.ico");
-	background-size: 20px;
-	width: 20px;
-	height: 20px;
-	position: absolute;
-	left: 3px;
-	top: 6px;
-	z-index: -100;
-	opacity: 0.5;
-	background-repeat: no-repeat;
-}
-.metadata-property[data-property-key="Github"] svg {
-	visibility: hidden;
-}
-
 .metadata-property[data-property-key="Bilibili"] .metadata-property-key::after {
 	content: "";
 	background-image: url("https://www.bilibili.com/favicon.ico");
@@ -159,5 +142,22 @@
 	background-repeat: no-repeat;
 }
 .metadata-property[data-property-key="wiki"] svg {
+	visibility: hidden;
+}
+
+.metadata-property[data-property-key="github"] .metadata-property-key::after {
+	content: "";
+	background-image: url("https://icones.pro/wp-content/uploads/2021/06/icone-github-violet.png");
+	background-size: 20px;
+	width: 20px;
+	height: 20px;
+	position: absolute;
+	left: 3px;
+	top: 6px;
+	z-index: -100;
+	opacity: 0.5;
+	background-repeat: no-repeat;
+}
+.metadata-property[data-property-key="github"] svg {
 	visibility: hidden;
 }

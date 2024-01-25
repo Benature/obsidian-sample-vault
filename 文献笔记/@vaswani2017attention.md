@@ -17,6 +17,7 @@ authors:
   - "[[Aidan N Gomez]]"
   - "[[Łukasz Kaiser]]"
   - "[[Illia Polosukhin]]"
+github: https://github.com/hyunwoongko/transformer
 ---
 - [ ] 《Attention is all you need》[🆉](zotero://select/items/@vaswani2017attention) ^read
 

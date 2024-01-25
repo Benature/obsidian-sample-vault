@@ -92,3 +92,32 @@ body {
   content: "🌟";
   font-size: 20px;
 }
+
+.data-link-text[data-link-tags*="CCF/"] {
+  margin-right: 1px;
+}
+.data-link-text[data-link-tags*="CCF/"]::after {
+  font-size: 8px;
+  font-weight: 700;
+  position: relative;
+  top: -6px;
+}
+.data-link-text[data-link-tags*="CCF/other"]::after {
+  content: "x";
+  color: rgb(172, 171, 171);
+}
+.data-link-text[data-link-tags*="CCF/A"][data-link-data-href^="@"]::after,
+.data-link-text[data-link-tags*="CCF/A"][data-href^="@"]::after {
+  content: "A";
+  color: #c72626;
+}
+.data-link-text[data-link-tags*="CCF/B"][data-link-data-href^="@"]::after,
+.data-link-text[data-link-tags*="CCF/B"][data-href^="@"]::after {
+  content: "B";
+  color: #db880d;
+}
+.data-link-text[data-link-tags*="CCF/C"][data-link-data-href^="@"]::after,
+.data-link-text[data-link-tags*="CCF/C"][data-href^="@"]::after {
+  content: "C";
+  color: #74a14c;
+}

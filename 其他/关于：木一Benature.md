@@ -1,5 +1,5 @@
 ---
-Github: https://github.com/Benature
+github: https://github.com/Benature
 微信公众号: 恰好恰好
 少数派: https://sspai.com/u/ap69vegv/posts
 知乎: https://www.zhihu.com/people/ben-benedict/posts

@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "科研/AI.md",
+                "file": "文献笔记/@vaswani2017attention.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -123,7 +123,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "科研/AI.md",
+                "file": "文献笔记/@vaswani2017attention.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -140,7 +140,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "科研/AI.md",
+                "file": "文献笔记/@vaswani2017attention.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -163,7 +163,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "科研/AI.md"
+                "file": "文献笔记/@vaswani2017attention.md"
               }
             }
           },
@@ -185,7 +185,7 @@
             "state": {
               "type": "file-properties",
               "state": {
-                "file": "科研/AI.md"
+                "file": "文献笔记/@vaswani2017attention.md"
               }
             }
           },
@@ -216,7 +216,7 @@
             "state": {
               "type": "localgraph",
               "state": {
-                "file": "科研/AI.md",
+                "file": "文献笔记/@vaswani2017attention.md",
                 "options": {
                   "collapse-filter": true,
                   "search": "",
@@ -282,8 +282,9 @@
   },
   "active": "3e12b966f005ea7d",
   "lastOpenFiles": [
-    "其他/模板库插件.md",
     "科研/AI.md",
+    "其他/关于：木一Benature.md",
+    "其他/模板库插件.md",
     "日记/2024/2024-01-25_Thu.md",
     "日记/2024/2024-01-24_Wed.md",
     "日记/2024/2024-01-23_Tue.md",
@@ -296,8 +297,6 @@
     "日记/2023/2023-01-25_Wed.md",
     "日记/2023",
     "日记/2024/2024-01-22_Mon.md",
-    "其他/关于：木一Benature.md",
-    "其他/关于：木一Benature.md",
     "其他/标题 CSS.md",
     "模板库说明.md",
     "模板库说明.md",

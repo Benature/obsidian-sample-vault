@@ -1,4 +1,7 @@
 {
+  "enableSnippet": true,
+  "propertiesVisible": "",
+  "propertiesInvisible": "",
   "IconAttrList": [
     {
       "entry": "zotero",
@@ -25,16 +28,16 @@
       "image": "https://www.xiaohongshu.com/favicon.ico"
     },
     {
-      "entry": "Github",
-      "image": "https://github.com/favicon.ico"
-    },
-    {
       "entry": "Bilibili",
       "image": "https://www.bilibili.com/favicon.ico"
     },
     {
       "entry": "wiki",
       "image": "https://en.wikipedia.org/favicon.ico"
+    },
+    {
+      "entry": "github",
+      "image": "https://icones.pro/wp-content/uploads/2021/06/icone-github-violet.png"
     }
   ]
 }

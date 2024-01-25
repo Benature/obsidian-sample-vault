@@ -1,0 +1,10 @@
+{
+  "folderName": "${filename}_media",
+  "pastedImageName": "${notename}-${datetime}",
+  "datetimeFormat": "YYYYMMDDHHmmssSSS",
+  "hideFolder": false,
+  "aeroFolder": true,
+  "autoRenameFolder": true,
+  "autoRenameFiles": true,
+  "autoDeleteFolder": false
+}

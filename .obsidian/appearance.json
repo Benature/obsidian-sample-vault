@@ -1,0 +1,14 @@
+{
+  "accentColor": "",
+  "cssTheme": "Minimal",
+  "theme": "obsidian",
+  "enabledCssSnippets": [
+    "heading",
+    "metadata-hider-auto-gen",
+    "木一Benature自定义",
+    "木一Benature自定义样式",
+    "supercharged-links-gen",
+    "dataview",
+    "diaryBetween"
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "targetAttributes": [
+    "category",
+    "gender",
+    "tags"
+  ],
+  "targetTags": true,
+  "presetFields": [],
+  "displayFieldsInContextMenu": true,
+  "globallyIgnoredFields": [
+    "title",
+    "container",
+    "year",
+    "url",
+    "wiki",
+    "github"
+  ],
+  "classFilesPath": "",
+  "getFromInlineField": true,
+  "activateSnippet": true,
+  "enableEditor": true,
+  "enableFileList": true,
+  "enableBacklinks": true,
+  "enableQuickSwitcher": true,
+  "enableSuggestor": true,
+  "selectors": []
+}

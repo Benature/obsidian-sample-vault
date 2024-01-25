@@ -1,0 +1,43 @@
+{
+  "enableSnippet": true,
+  "propertiesVisible": "",
+  "propertiesInvisible": "",
+  "IconAttrList": [
+    {
+      "entry": "zotero",
+      "image": "https://www.zotero.org/favicon.ico"
+    },
+    {
+      "entry": "scholar",
+      "image": "https://img1.baidu.com/it/u=1136539716,1879156025&fm=253&fmt=auto&app=138&f=PNG?w=300&h=300"
+    },
+    {
+      "entry": "微信公众号",
+      "image": "https://mp.weixin.qq.com/favicon.ico"
+    },
+    {
+      "entry": "知乎",
+      "image": "https://www.zhihu.com/favicon.ico"
+    },
+    {
+      "entry": "少数派",
+      "image": "https://cdn-static.sspai.com/favicon/sspai.ico"
+    },
+    {
+      "entry": "小红书",
+      "image": "https://www.xiaohongshu.com/favicon.ico"
+    },
+    {
+      "entry": "Github",
+      "image": "https://github.com/favicon.ico"
+    },
+    {
+      "entry": "Bilibili",
+      "image": "https://www.bilibili.com/favicon.ico"
+    },
+    {
+      "entry": "wiki",
+      "image": "https://en.wikipedia.org/favicon.ico"
+    }
+  ]
+}

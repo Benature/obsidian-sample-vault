@@ -1,0 +1,71 @@
+/* taskList() 在 pin 中取消基础 padding-left、颜色修改、彩虹线 */
+ignore-next-dv + div > .dataview.result-group,
+ignore-next-dv + div > .dataview.result-group > ul.contains-task-list {
+  padding-left: 8px;
+}
+ignore-next-dv + div > .dataview.result-group li {
+  color: rgb(201, 218, 250) !important;
+  padding-left: 5px !important;
+}
+ignore-next-dv + div > .dataview.result-group ul ul {
+  border-left: 2px dashed rgba(122, 136, 207, 0.25);
+}
+
+/* 隐藏 ignore-next-dv 后的 header */
+ignore-next-dv + div > h4 {
+  display: none !important;
+  color: red !important;
+}
+
+/* table */
+.table-view-table tbody tr > td,
+.table-view-table thead tr > th,
+.table-view-table tbody tr:last-child > td {
+  border: 1px solid #3c3942;
+}
+.table-view-table thead tr > th.table-view-th {
+  border-bottom: 2px solid #504c5e;
+  border-top: 2px solid #504c5e;
+}
+.table-view-table tbody tr > td:first-child,
+.table-view-table thead tr > th:first-child {
+  border-left: 0px;
+}
+.table-view-table tbody tr > td:last-child,
+.table-view-table thead tr > th:last-child {
+  border-right: 0px;
+}
+
+.trim-cols .markdown-source-view.mod-cm6 .table-view-table > tbody > tr > td {
+  white-space: initial;
+}
+
+.markdown-preview-view table.dataview.table-view-table,
+.markdown-source-view.mod-cm6.is-readable-line-width
+  .cm-contentContainer.cm-contentContainer
+  > .cm-content
+  table {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cards .table-view-table tbody tr > td {
+  border: none;
+}
+
+.cards
+  table.dataview.table-view-table
+  tbody
+  > tr
+  > td:not(:has(.dv-class-td-ignore)) {
+  min-height: 50px;
+  display: flex;
+  align-items: center;
+  padding: 0;
+  /*justify-content: center;*/
+}
+
+.cards .table-view-table tbody tr > td span {
+  font-size: 12px;
+  padding: 0;
+}

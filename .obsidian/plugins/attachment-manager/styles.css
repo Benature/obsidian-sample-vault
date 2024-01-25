@@ -1,0 +1,8 @@
+.nav-folder.aero-attachment-folder{
+    opacity: 0.2;
+}
+.nav-folder.hide-attachment-folder,
+.nav-folder.hide-attachment-folder *{
+    visibility: hidden;
+    height: 0 !important;
+}

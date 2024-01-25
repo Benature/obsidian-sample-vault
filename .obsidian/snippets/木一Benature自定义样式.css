@@ -1,0 +1,94 @@
+body {
+  --code-background: #303337;
+  --link-color: #a49ec2;
+}
+
+.theme-dark {
+  --code-normal: #cbb9a7;
+}
+
+.markdown-source-view.mod-cm6.is-readable-line-width
+  .cm-contentContainer.cm-contentContainer
+  > .cm-content
+  > img {
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+.markdown-source-view .image-embed.is-loaded {
+  text-align: center;
+}
+.markdown-source-view.is-readable-line-width
+  .cm-contentContainer
+  .cm-content
+  > img[width] {
+  display: block;
+  margin: 0 auto !important;
+}
+
+.markdown-preview-view img {
+  display: block;
+  margin-top: 20pt;
+  margin-bottom: 20pt;
+  margin-left: auto;
+  margin-right: auto;
+  /* width: 40%; experiment with values */
+  transition: transform 0.25s ease;
+}
+
+.workspace-tabs:has(.workspace-tab-header.is-active[aria-label^="@"])
+  .metadata-property[data-property-key="title"]
+  .metadata-property-key::after {
+  content: "";
+  background-image: url("https://s2.loli.net/2024/01/25/bgeSniU8vqKfXa5.png");
+  background-size: 20px;
+  width: 36px;
+  height: 20px;
+  position: relative;
+  left: -84%;
+  top: 4px;
+  z-index: -100;
+  opacity: 0.5;
+  background-repeat: no-repeat;
+}
+.workspace-tabs:has(.workspace-tab-header.is-active[aria-label^="@"])
+  .metadata-property[data-property-key="title"]
+  svg {
+  visibility: hidden;
+}
+
+[data-link-tags="researcher"] {
+  background-color: rgba(54, 54, 194, 0.534);
+  border-radius: 3px;
+  padding: 0px 2px;
+}
+.data-link-text[data-link-tags="researcher" i]::before {
+  content: "👨‍🎓 ";
+}
+
+.mod-root
+  .metadata-container:has(
+    .metadata-property[data-property-key="hide"] input[type="checkbox"]:checked
+  ) {
+  display: none;
+}
+
+.workspace-tab-header[aria-label="置顶通知区"]
+  .workspace-tab-header-inner-icon
+  > svg {
+  display: none;
+}
+.workspace-tab-header[aria-label="置顶通知区"]
+  .workspace-tab-header-inner-icon::after {
+  position: relative;
+  top: 1px;
+  content: "🎈";
+}
+.workspace-tab-header[aria-label="pin"] .workspace-tab-header-inner-icon > svg {
+  display: none;
+}
+.workspace-tab-header[aria-label="pin"] .workspace-tab-header-inner-icon:after {
+  position: relative;
+  top: 2px;
+  content: "🌟";
+  font-size: 20px;
+}

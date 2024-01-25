@@ -1,0 +1,9 @@
+{
+  "citationExportFormat": "biblatex",
+  "literatureNoteTitleTemplate": "@{{citekey}}",
+  "literatureNoteFolder": "文献笔记",
+  "literatureNoteContentTemplate": "---\nalias: {{titleShort}}\ntags: \nyear: {{year}}\ntitle: \"{{title}}\"\ncontainer: \"{{containerTitle}}\"\nurl: {{#if URL}}{{URL}}{{else}}{{#if DOI}}https://doi.org/{{DOI}}{{/if}}{{/if}}\nzotero: {{zoteroSelectURI}}\nauthors: [{{#each entry.author}} \"[[{{given}} {{family}}]]\",{{/each}}]\n---\n- [ ] 《{{title}}》[🆉]({{zoteroSelectURI}}) ^read\n\nrelated:: \naffiliation:: \n\n---\n\n- abbr.\n\n#### comment\n\n## 0 abstract\n\n## 1 Intro\n\n{{URL}}\n",
+  "markdownCitationTemplate": "[@{{citekey}}]",
+  "alternativeMarkdownCitationTemplate": "@{{citekey}}",
+  "citationExportPath": "setting/Zotero.bib"
+}

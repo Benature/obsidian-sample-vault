@@ -1,0 +1,38 @@
+.breadcrumbs-wrapper {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 15px;
+  height: 35px;
+}
+
+.ready.elegant-btn {
+  /* color: black; */
+  text-decoration: none;
+  font-size: 14px;
+  padding: 4px 22px;
+  border: 2px solid black;
+  display: flex;
+  justify-content: center;
+  background-color: transparent;
+  box-shadow: 11px 11px 0px 0px black;
+  transition: all 0.2s ease;
+}
+
+.ready.elegant-btn:hover {
+  box-shadow: 0px 0px 0px 0px black;
+}
+
+.dv-prev-dates > span {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 8px;
+}
+
+/* .block-language-dataviewjs.node-insert-event > p {
+  line-height: 1.5;
+} */
+
+.block-language-dataviewjs.node-insert-event .dataview.table-view-table {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}

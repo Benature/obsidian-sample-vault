@@ -3,5 +3,6 @@
   "promptDelete": false,
   "showLineNumber": true,
   "newFileLocation": "folder",
-  "newFileFolderPath": "inbox"
+  "newFileFolderPath": "inbox",
+  "alwaysUpdateLinks": true
 }

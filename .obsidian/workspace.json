@@ -14,7 +14,7 @@
               "type": "markdown",
               "state": {
                 "file": "科研/AI.md",
-                "mode": "preview",
+                "mode": "source",
                 "backlinks": true,
                 "source": false
               }
@@ -282,11 +282,12 @@
   },
   "active": "3e12b966f005ea7d",
   "lastOpenFiles": [
+    "其他/模板库插件.md",
+    "科研/AI.md",
     "日记/2024/2024-01-25_Thu.md",
     "日记/2024/2024-01-24_Wed.md",
     "日记/2024/2024-01-23_Tue.md",
     "文献笔记/@glaese2022improving.md",
-    "科研/AI.md",
     "科研/ChatGPT.md",
     "README.md",
     "setting/置顶通知区.md",
@@ -308,7 +309,6 @@
     "文献笔记/@ramachandran2019stand.md",
     "文献笔记/@parmar2018image.md",
     "文献笔记/@ouyang2022training.md",
-    "文献笔记/@gulati2020conformer.md",
     "setting/templates/template-folder",
     "inbox",
     "日记/2024",

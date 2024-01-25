@@ -1,5 +1,5 @@
 class Daily {
-  ReadingFolder = "Reading-notes";
+  ReadingFolder = "文献笔记";
   DiaryDailyFolder = "日记";
   WeeklyFolder = `日记/周记`;
   setup(dv, R) {

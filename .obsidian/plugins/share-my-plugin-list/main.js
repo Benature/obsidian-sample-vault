@@ -34,24 +34,49 @@ var ShareMyPluginList = class extends import_obsidian.Plugin {
       id: "generate-list",
       name: "Generate List",
       editorCallback: (editor, view) => {
-        this.getPluginList(editor);
+        this.genList(editor);
+      }
+    });
+    this.addCommand({
+      id: "generate-table",
+      name: "Generate Table",
+      editorCallback: (editor, view) => {
+        this.genTable(editor);
       }
     });
   }
-  async getPluginList(editor) {
-    const vault = this.app.vault;
-    const json_path = `${vault.configDir}/community-plugins.json`;
-    if (!await vault.adapter.exists(json_path)) {
-      return;
-    }
-    const plugins = JSON.parse(await vault.adapter.read(json_path));
+  async genList(editor) {
+    const plugins = this.getPlugins();
     let text = [];
-    plugins.forEach((p, i) => {
-      text.push(`- [${p}](https://obsidian.md/plugins?id=${p})`);
-    });
+    for (let key in plugins) {
+      const m = plugins[key].manifest;
+      let line = `- [**${m.name}**](https://obsidian.md/plugins?id=${m.id})`;
+      if (m.author && m.authorUrl) {
+        line += `by [*${m.author}*](${m.authorUrl})`;
+      }
+      text.push(line);
+    }
     editor.replaceSelection(text.join("\n") + "\n");
+  }
+  async genTable(editor) {
+    const plugins = this.getPlugins();
+    let text = [""];
+    text.push("|Plugin|Author|Version|");
+    text.push("|------|------|------|");
+    for (let key in plugins) {
+      const m = plugins[key].manifest;
+      let name = `[**${m.name}**](https://obsidian.md/plugins?id=${m.id})`;
+      let author = "";
+      if (m.author && m.authorUrl) {
+        author = `[${m == null ? void 0 : m.author.replace(/<.*?@.*?\..*?>/g, "")}](${m == null ? void 0 : m.authorUrl})`;
+      }
+      text.push(`|${name}|${author}|${m == null ? void 0 : m.version}|`);
+    }
+    editor.replaceSelection(text.join("\n") + "\n");
+  }
+  getPlugins() {
+    return this.app.plugins.plugins;
   }
   onunload() {
   }
 };
-//# sourceMappingURL=data:application/json;base64,ewogICJ2ZXJzaW9uIjogMywKICAic291cmNlcyI6IFsibWFpbi50cyJdLAogICJzb3VyY2VzQ29udGVudCI6IFsiaW1wb3J0IHsgQXBwLCBFZGl0b3IsIE1hcmtkb3duVmlldywgTW9kYWwsIE5vdGljZSwgUGx1Z2luLCBQbHVnaW5TZXR0aW5nVGFiLCBTZXR0aW5nIH0gZnJvbSAnb2JzaWRpYW4nO1xuXG4vLyBSZW1lbWJlciB0byByZW5hbWUgdGhlc2UgY2xhc3NlcyBhbmQgaW50ZXJmYWNlcyFcblxuXG5leHBvcnQgZGVmYXVsdCBjbGFzcyBTaGFyZU15UGx1Z2luTGlzdCBleHRlbmRzIFBsdWdpbiB7XG5cblx0YXN5bmMgb25sb2FkKCkge1xuXHRcdHRoaXMuYWRkQ29tbWFuZCh7XG5cdFx0XHRpZDogJ2dlbmVyYXRlLWxpc3QnLFxuXHRcdFx0bmFtZTogJ0dlbmVyYXRlIExpc3QnLFxuXHRcdFx0ZWRpdG9yQ2FsbGJhY2s6IChlZGl0b3I6IEVkaXRvciwgdmlldzogTWFya2Rvd25WaWV3KSA9PiB7XG5cdFx0XHRcdHRoaXMuZ2V0UGx1Z2luTGlzdChlZGl0b3IpO1xuXHRcdFx0fVxuXHRcdH0pO1xuXHR9XG5cblx0YXN5bmMgZ2V0UGx1Z2luTGlzdChlZGl0b3I6IEVkaXRvcikge1xuXHRcdGNvbnN0IHZhdWx0ID0gdGhpcy5hcHAudmF1bHQ7XG5cdFx0Y29uc3QganNvbl9wYXRoID0gYCR7dmF1bHQuY29uZmlnRGlyfS9jb21tdW5pdHktcGx1Z2lucy5qc29uYFxuXHRcdGlmICghKGF3YWl0IHZhdWx0LmFkYXB0ZXIuZXhpc3RzKGpzb25fcGF0aCkpKSB7XG5cdFx0XHRyZXR1cm47XG5cdFx0fVxuXHRcdGNvbnN0IHBsdWdpbnMgPSBKU09OLnBhcnNlKGF3YWl0IHZhdWx0LmFkYXB0ZXIucmVhZChqc29uX3BhdGgpKTtcblxuXHRcdGxldCB0ZXh0OiBzdHJpbmdbXSA9IFtdO1xuXHRcdHBsdWdpbnMuZm9yRWFjaCgocDogc3RyaW5nLCBpOiBudW1iZXIpID0+IHtcblx0XHRcdHRleHQucHVzaChgLSBbJHtwfV0oaHR0cHM6Ly9vYnNpZGlhbi5tZC9wbHVnaW5zP2lkPSR7cH0pYCk7XG5cdFx0fSlcblx0XHRlZGl0b3IucmVwbGFjZVNlbGVjdGlvbih0ZXh0LmpvaW4oJ1xcbicpICsgXCJcXG5cIik7XG5cdH1cblxuXHRvbnVubG9hZCgpIHtcblx0fVxufVxuIl0sCiAgIm1hcHBpbmdzIjogIjs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7O0FBQUE7QUFBQTtBQUFBO0FBQUE7QUFBQTtBQUFBLHNCQUE0RjtBQUs1RixJQUFxQixvQkFBckIsY0FBK0MsdUJBQU87QUFBQSxFQUVyRCxNQUFNLFNBQVM7QUFDZCxTQUFLLFdBQVc7QUFBQSxNQUNmLElBQUk7QUFBQSxNQUNKLE1BQU07QUFBQSxNQUNOLGdCQUFnQixDQUFDLFFBQWdCLFNBQXVCO0FBQ3ZELGFBQUssY0FBYyxNQUFNO0FBQUEsTUFDMUI7QUFBQSxJQUNELENBQUM7QUFBQSxFQUNGO0FBQUEsRUFFQSxNQUFNLGNBQWMsUUFBZ0I7QUFDbkMsVUFBTSxRQUFRLEtBQUssSUFBSTtBQUN2QixVQUFNLFlBQVksR0FBRyxNQUFNO0FBQzNCLFFBQUksQ0FBRSxNQUFNLE1BQU0sUUFBUSxPQUFPLFNBQVMsR0FBSTtBQUM3QztBQUFBLElBQ0Q7QUFDQSxVQUFNLFVBQVUsS0FBSyxNQUFNLE1BQU0sTUFBTSxRQUFRLEtBQUssU0FBUyxDQUFDO0FBRTlELFFBQUksT0FBaUIsQ0FBQztBQUN0QixZQUFRLFFBQVEsQ0FBQyxHQUFXLE1BQWM7QUFDekMsV0FBSyxLQUFLLE1BQU0scUNBQXFDLElBQUk7QUFBQSxJQUMxRCxDQUFDO0FBQ0QsV0FBTyxpQkFBaUIsS0FBSyxLQUFLLElBQUksSUFBSSxJQUFJO0FBQUEsRUFDL0M7QUFBQSxFQUVBLFdBQVc7QUFBQSxFQUNYO0FBQ0Q7IiwKICAibmFtZXMiOiBbXQp9Cg==

@@ -9,6 +9,7 @@
 
 
 /* * Custom: Force visible */
-.metadata-property[data-property-key=""]
+.metadata-property[data-property-key="tags"], 
+.metadata-property[data-property-key="aliases"]
  { display: flex !important; }
 

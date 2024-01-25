@@ -1,5 +1,5 @@
 {
   "enableSnippet": true,
-  "propertiesVisible": "",
+  "propertiesVisible": "tags, aliases",
   "propertiesInvisible": "zotero"
 }

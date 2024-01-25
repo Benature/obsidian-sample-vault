@@ -13,8 +13,8 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "README.md",
-                "mode": "source",
+                "file": "科研/AI.md",
+                "mode": "preview",
                 "backlinks": true,
                 "source": false
               }
@@ -123,7 +123,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "README.md",
+                "file": "科研/AI.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -140,7 +140,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "README.md",
+                "file": "科研/AI.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -163,7 +163,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "README.md"
+                "file": "科研/AI.md"
               }
             }
           },
@@ -185,7 +185,7 @@
             "state": {
               "type": "file-properties",
               "state": {
-                "file": "README.md"
+                "file": "科研/AI.md"
               }
             }
           },
@@ -216,7 +216,7 @@
             "state": {
               "type": "localgraph",
               "state": {
-                "file": "README.md",
+                "file": "科研/AI.md",
                 "options": {
                   "collapse-filter": true,
                   "search": "",
@@ -280,13 +280,16 @@
       "workspaces:管理工作区布局": false
     }
   },
-  "active": "845c27043dc86471",
+  "active": "3e12b966f005ea7d",
   "lastOpenFiles": [
     "日记/2024/2024-01-25_Thu.md",
-    "setting/置顶通知区.md",
-    "README.md",
     "日记/2024/2024-01-24_Wed.md",
     "日记/2024/2024-01-23_Tue.md",
+    "文献笔记/@glaese2022improving.md",
+    "科研/AI.md",
+    "科研/ChatGPT.md",
+    "README.md",
+    "setting/置顶通知区.md",
     "日记/2023/2023-01-23_Mon.md",
     "日记/2023/2023-01-24_Tue.md",
     "日记/2023/2023-01-25_Wed.md",
@@ -298,7 +301,6 @@
     "模板库说明.md",
     "模板库说明.md",
     "inbox/undefined.md",
-    "科研/AI.md",
     "setting/最近笔记.md",
     "文献笔记/@srinivas2021bottleneck.md",
     "文献笔记/@vaswani2017attention.md",
@@ -307,8 +309,6 @@
     "文献笔记/@parmar2018image.md",
     "文献笔记/@ouyang2022training.md",
     "文献笔记/@gulati2020conformer.md",
-    "文献笔记/@glaese2022improving.md",
-    "文献笔记/@brown2020language.md",
     "setting/templates/template-folder",
     "inbox",
     "日记/2024",

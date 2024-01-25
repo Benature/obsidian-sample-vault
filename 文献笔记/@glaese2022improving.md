@@ -45,7 +45,7 @@ authors:
 ---
 - [ ] 《Improving alignment of dialogue agents via targeted human judgements》[🆉](zotero://select/items/@glaese2022improving) ^read
 
-related:: [[AI]]
+related:: [[AI]], [[ML]]
 affiliation:: [[DeepMind]]
 
 ---

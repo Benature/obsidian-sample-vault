@@ -1,8 +1,8 @@
 {
   "pluginList": [
+    "Benature/obsidian-metadata-hider",
     "Benature/obsidian-share-my-plugin-list",
-    "Benature/obsidian-metadata-icon",
-    "Benature/obsidian-metadata-hider"
+    "Benature/obsidian-metadata-icon"
   ],
   "pluginSubListFrozenVersion": [],
   "themesList": [],

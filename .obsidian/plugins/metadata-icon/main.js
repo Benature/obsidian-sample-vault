@@ -29,10 +29,7 @@ __export(main_exports, {
 module.exports = __toCommonJS(main_exports);
 var import_obsidian = require("obsidian");
 var DEFAULT_SETTINGS = {
-  enableSnippet: true,
-  propertiesVisible: "",
-  propertiesInvisible: "",
-  IconAttrList: []
+  IconAttrList: [{ entry: "github", image: "https://icones.pro/wp-content/uploads/2021/06/icone-github-violet.png" }]
 };
 var MetadataIcon = class extends import_obsidian.Plugin {
   async onload() {
@@ -107,11 +104,23 @@ var MetadataHiderSettingTab = class extends import_obsidian.PluginSettingTab {
   async generateSnippet() {
     await genSnippetCSS(this.plugin);
   }
+  getLang() {
+    let lang = window.localStorage.getItem("language");
+    if (lang == null || ["en", "zh", "zh-TW"].indexOf(lang) == -1) {
+      lang = "en";
+    }
+    return lang;
+  }
   display() {
     const { containerEl } = this;
+    const lang = this.getLang();
     containerEl.empty();
-    new import_obsidian.Setting(containerEl).setName("Add custom entry icon").setDesc("Input entry name and icon url.").addButton((button) => {
-      button.setTooltip("Add new request").setButtonText("+").setCta().onClick(async () => {
+    new import_obsidian.Setting(containerEl).setName({ en: "Add custom entry icon", zh: "\u6DFB\u52A0\u81EA\u5B9A\u4E49\u56FE\u6807", "zh-TW": "\u65B0\u589E\u81EA\u5B9A\u7FA9\u5716\u793A" }[lang]).setDesc({
+      "en": "Input entry name and icon url. The image will be automatically loaded on the left side. If there is no image shown on the left side, please check the image url or network connection.",
+      "zh": "\u8F93\u5165\u6587\u6863\u5C5E\u6027\u540D\u79F0\u548C\u56FE\u6807\u94FE\u63A5\u3002\u56FE\u6807\u5C06\u5728\u5DE6\u4FA7\u81EA\u52A8\u9884\u89C8\uFF0C\u5982\u679C\u5DE6\u4FA7\u6CA1\u6709\u663E\u793A\u56FE\u7247\uFF0C\u8BF7\u68C0\u67E5\u56FE\u7247\u94FE\u63A5\u662F\u5426\u6B63\u786E\u6216\u7F51\u7EDC\u8FDE\u63A5\u3002\u5982\uFF1A\u300C\u8C46\u74E3\uFF0Chttps://img1.doubanio.com/favicon.ico\u300D",
+      "zh-TW": "\u8F38\u5165\u6587\u4EF6\u5C6C\u6027\u540D\u7A31\u548C\u5716\u793A\u93C8\u63A5\u3002\u5716\u793A\u5C07\u5728\u5DE6\u5074\u81EA\u52D5\u9810\u89BD\uFF0C\u5982\u679C\u5DE6\u5074\u6C92\u6709\u986F\u793A\u5716\u7247\uFF0C\u8ACB\u6AA2\u67E5\u5716\u7247\u93C8\u63A5\u662F\u5426\u6B63\u78BA\u6216\u7DB2\u7D61\u9023\u7DDA\u3002\u5982\uFF1A\u300Cfacebook\uFF0Chttps://www.facebook.com/favicon.ico\u300D"
+    }[lang]).addButton((button) => {
+      button.setTooltip("Add new icon").setButtonText("+").setCta().onClick(async () => {
         this.plugin.settings.IconAttrList.push({
           entry: "",
           image: ""
@@ -122,20 +131,22 @@ var MetadataHiderSettingTab = class extends import_obsidian.PluginSettingTab {
     });
     this.plugin.settings.IconAttrList.forEach((iconSetting, index) => {
       const s = new import_obsidian.Setting(this.containerEl).then((setting) => {
-        let span = setting.descEl.createEl("span", { text: "icon preview:" });
+        let span = setting.descEl.createEl("span", { text: { en: "icon preview:", zh: "\u56FE\u6807\u9884\u89C8:", "zh-TW": "\u5716\u793A\u9810\u89BD:" }[lang] });
         span.setAttribute("style", `margin-right: 2px; `);
         let img = setting.descEl.createEl("img", { cls: "metadata-icon-preview" });
         img.setAttribute("src", iconSetting.image);
         img.setAttribute("width", `20px`);
+        img.setAttribute("style", `background-color: transparent;`);
       }).addSearch((cb) => {
-        cb.setPlaceholder("entry name").setValue(iconSetting.entry).onChange(async (newValue) => {
+        cb.setPlaceholder({ en: "entry name", zh: "\u6587\u6863\u5C5E\u6027\u540D\u79F0", "zh-TW": "\u6587\u4EF6\u5C6C\u6027\u540D\u7A31" }[lang]).setValue(iconSetting.entry).onChange(async (newValue) => {
           this.plugin.settings.IconAttrList[index].entry = newValue;
           await this.plugin.saveSettings();
         });
       }).addSearch((cb) => {
-        cb.setPlaceholder("image url").setValue(iconSetting.image).onChange(async (newValue) => {
+        cb.setPlaceholder({ en: "image url", zh: "\u56FE\u6807\u94FE\u63A5", "zh-TW": "\u5716\u793A\u93C8\u63A5" }[lang]).setValue(iconSetting.image).onChange(async (newValue) => {
           this.plugin.settings.IconAttrList[index].image = newValue;
           await this.plugin.saveSettings();
+          this.display();
         });
       }).addExtraButton((cb) => {
         cb.setIcon("cross").setTooltip("Delete").onClick(async () => {
@@ -145,8 +156,12 @@ var MetadataHiderSettingTab = class extends import_obsidian.PluginSettingTab {
         });
       });
     });
-    new import_obsidian.Setting(containerEl).setName("Force Refresh CSS").addButton((button) => {
-      button.setTooltip("Add new request").setButtonText("Refresh").setCta().onClick(async () => {
+    new import_obsidian.Setting(containerEl).setName({ en: "Force Refresh CSS", zh: "\u5F3A\u5236\u5237\u65B0\u63D2\u4EF6CSS\u6837\u5F0F", "zh-TW": "\u5F37\u5236\u5237\u65B0\u63D2\u4EF6CSS\u6A23\u5F0F" }[lang]).setDesc({
+      en: `Note: The "icon preview" in the setting tab is automatically loaded, which is not related to this button.`,
+      zh: `\u6CE8\u610F\uFF1A\u8BBE\u7F6E\u9009\u9879\u5361\u4E2D\u7684\u201C\u56FE\u6807\u9884\u89C8\u201D\u662F\u81EA\u52A8\u52A0\u8F7D\u7684\uFF0C\u4E0E\u6B64\u6309\u94AE\u65E0\u5173\u3002`,
+      "zh-TW": `\u6CE8\u610F\uFF1A\u8A2D\u5B9A\u9078\u55AE\u4E2D\u7684\u300C\u5716\u793A\u9810\u89BD\u300D\u662F\u81EA\u52D5\u8F09\u5165\u7684\uFF0C\u8207\u6B64\u6309\u9215\u7121\u95DC\u3002`
+    }[lang]).addButton((button) => {
+      button.setButtonText({ en: "Refresh", zh: "\u5237\u65B0", "zh-TW": "\u5237\u65B0" }[lang]).setCta().onClick(async () => {
         const plugins = this.plugin.app.plugins;
         await plugins.disablePlugin(this.plugin.manifest.id);
         await plugins.enablePlugin(this.plugin.manifest.id);

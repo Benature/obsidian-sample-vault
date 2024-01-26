@@ -26,7 +26,7 @@
 	visibility: hidden;
 }
 
-.metadata-property[data-property-key="scholar"] .metadata-property-key::after {
+.metadata-property[data-property-key="google"] .metadata-property-key::after {
 	content: "";
 	background-image: url("https://img1.baidu.com/it/u=1136539716,1879156025&fm=253&fmt=auto&app=138&f=PNG?w=300&h=300");
 	background-size: 20px;
@@ -39,7 +39,7 @@
 	opacity: 0.5;
 	background-repeat: no-repeat;
 }
-.metadata-property[data-property-key="scholar"] svg {
+.metadata-property[data-property-key="google"] svg {
 	visibility: hidden;
 }
 
@@ -159,5 +159,22 @@
 	background-repeat: no-repeat;
 }
 .metadata-property[data-property-key="github"] svg {
+	visibility: hidden;
+}
+
+.metadata-property[data-property-key="scholar"] .metadata-property-key::after {
+	content: "";
+	background-image: url("https://s2.loli.net/2024/01/25/bgeSniU8vqKfXa5.png");
+	background-size: 20px;
+	width: 20px;
+	height: 20px;
+	position: absolute;
+	left: 3px;
+	top: 6px;
+	z-index: -100;
+	opacity: 0.5;
+	background-repeat: no-repeat;
+}
+.metadata-property[data-property-key="scholar"] svg {
 	visibility: hidden;
 }

@@ -18,7 +18,7 @@ authors:
 - [ ] 《Bottleneck transformers for visual recognition》[🆉](zotero://select/items/@srinivas2021bottleneck) ^read
 
 related:: 
-affiliation:: 
+affiliation:: [[UC Berkeley]], [[Google]]
 
 ---
 

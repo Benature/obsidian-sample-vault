@@ -4,12 +4,12 @@
 * /
 
 /* * Custom: Force invisible */
-.metadata-property[data-property-key="zotero"]
+.mod-root .metadata-property[data-property-key="zotero"]
  { display: none !important; }
 
 
 /* * Custom: Force visible */
-.metadata-property[data-property-key="tags"], 
-.metadata-property[data-property-key="aliases"]
+ .metadata-property[data-property-key="tags"], 
+ .metadata-property[data-property-key="aliases"]
  { display: flex !important; }
 

@@ -22,7 +22,7 @@ github: https://github.com/hyunwoongko/transformer
 - [ ] 《Attention is all you need》[🆉](zotero://select/items/@vaswani2017attention) ^read
 
 related:: [[ChatGPT]], [[AI]]
-affiliation:: 
+affiliation:: [[Google]]
 
 ---
 

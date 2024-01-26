@@ -1,7 +1,8 @@
 ---
 aliases:
   - InstructGPT
-tags: 
+tags:
+  - CCF/A/NeurIPS
 year: 2022
 title: Training language models to follow instructions with human feedback
 container: Adv. Neural Inf. Process. Syst.

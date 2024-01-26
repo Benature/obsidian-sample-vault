@@ -18,7 +18,7 @@ authors:
 - [ ] 《Stand-alone self-attention in vision models》[🆉](zotero://select/items/@ramachandran2019stand) ^read
 
 related:: 
-affiliation:: 
+affiliation:: [[Google]]
 
 ---
 

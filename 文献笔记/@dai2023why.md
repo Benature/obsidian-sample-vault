@@ -8,10 +8,10 @@ url:
 zotero: zotero://select/items/@dai2023why
 authors: [ "[[Damai Dai]]", "[[Yutao Sun]]", "[[Li Dong]]", "[[Yaru Hao]]", "[[Shuming Ma]]", "[[Zhifang Sui]]", "[[Furu Wei]]",]
 ---
-- [ ] 《Why Can GPT Learn In-Context? Language Models Implicitly Perform Gradient Descent as Meta-Optimizers》[🆉](zotero://select/items/@dai2023why) ^read
+- [ ] 《Why Can GPT Learn In-Context? Language Models Implicitly Perform Gradient Descent as Meta-Optimizers》 [🆉](zotero://select/items/@dai2023why) ^read
 
 related:: [[AI]]
-affiliation:: 
+affiliation:: [[PKU]], [[Microsoft]]
 
 ---
 

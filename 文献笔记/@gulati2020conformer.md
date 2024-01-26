@@ -24,7 +24,7 @@ authors:
 - [ ] 《Conformer: Convolution-augmented Transformer for Speech Recognition》[🆉](zotero://select/items/@gulati2020conformer) ^read
 
 related:: 
-affiliation:: 
+affiliation:: [[Google]]
 
 ---
 

@@ -1,14 +1,11 @@
 {
-  "enableSnippet": true,
-  "propertiesVisible": "",
-  "propertiesInvisible": "",
   "IconAttrList": [
     {
       "entry": "zotero",
       "image": "https://www.zotero.org/favicon.ico"
     },
     {
-      "entry": "scholar",
+      "entry": "google",
       "image": "https://img1.baidu.com/it/u=1136539716,1879156025&fm=253&fmt=auto&app=138&f=PNG?w=300&h=300"
     },
     {
@@ -38,6 +35,13 @@
     {
       "entry": "github",
       "image": "https://icones.pro/wp-content/uploads/2021/06/icone-github-violet.png"
+    },
+    {
+      "entry": "scholar",
+      "image": "https://s2.loli.net/2024/01/25/bgeSniU8vqKfXa5.png"
     }
-  ]
+  ],
+  "enableSnippet": true,
+  "propertiesVisible": "",
+  "propertiesInvisible": ""
 }

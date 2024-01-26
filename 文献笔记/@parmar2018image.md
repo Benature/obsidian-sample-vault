@@ -19,7 +19,7 @@ authors:
 - [ ] 《Image transformer》[🆉](zotero://select/items/@parmar2018image) ^read
 
 related:: 
-affiliation:: 
+affiliation:: [[UC Berkeley]], [[Google]]
 
 ---
 

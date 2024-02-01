@@ -17,7 +17,7 @@ hide: true
 若希望修改黏贴内容格式，可以 `ctrl/⌘+P` 输入「从剪贴板获取 Zotero 笔记并粘贴/Get Zotero note from clipboard and paste」并回车（或自定义快捷键），可以得到如下内容。
 ![[@vaswani2017attention#^sample-format]]
 
-格式可在 [Text Format](obsidian://show-plugin?id=obsidian-text-format) 设置区中配置，默认笔记携带了 Zotero 的反链（🔖）。
+格式可在 [Text Format](https://obsidian.md/plugins?id=obsidian-text-format) 设置区中配置，默认笔记携带了 Zotero 的反链（🔖）。
 
 #### 研究人员笔记
 点击文献中的 `authors` 可跳转到（或创建）相应研究者笔记。
@@ -30,8 +30,8 @@ hide: true
 
 ## 其他
 
-模板库所使用插件名单可在「设置-第三方插件」或[[模板库插件|模板库插件]]查看。
+模板库所使用插件名单可在「设置-第三方插件」或[模板库插件](./其他/模板库插件.md)查看。
 
 ---
 
-关于作者：[[关于：木一Benature|木一Benature]]
+关于作者：[木一Benature](其他/关于：木一Benature.md)

@@ -4,30 +4,18 @@
     "type": "split",
     "children": [
       {
-        "id": "3fec4577550e6ea6",
+        "id": "ff4760f70b088309",
         "type": "tabs",
         "children": [
           {
-            "id": "3e12b966f005ea7d",
+            "id": "eb638d446f0b8139",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "机构/OpenAI.md",
+                "file": "日记/2024/2024-01-26_Fri.md",
                 "mode": "source",
                 "backlinks": true,
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "14b4b522193712f8",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "文献笔记/@vaswani2017attention.md",
-                "mode": "source",
                 "source": false
               }
             }
@@ -120,7 +108,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "机构/OpenAI.md",
+                "file": "日记/2024/2024-01-26_Fri.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -137,7 +125,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "机构/OpenAI.md",
+                "file": "日记/2024/2024-01-26_Fri.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -175,7 +163,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "机构/OpenAI.md"
+                "file": "日记/2024/2024-01-26_Fri.md"
               }
             }
           },
@@ -197,7 +185,7 @@
             "state": {
               "type": "file-properties",
               "state": {
-                "file": "机构/OpenAI.md"
+                "file": "日记/2024/2024-01-26_Fri.md"
               }
             }
           },
@@ -216,7 +204,7 @@
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 7
       },
       {
         "id": "454ed639f28082be",
@@ -228,7 +216,7 @@
             "state": {
               "type": "localgraph",
               "state": {
-                "file": "机构/OpenAI.md",
+                "file": "日记/2024/2024-01-26_Fri.md",
                 "options": {
                   "collapse-filter": true,
                   "search": "",
@@ -276,30 +264,39 @@
       }
     ],
     "direction": "horizontal",
-    "width": 527.5
+    "width": 421.5,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
-      "obsidian42-brat:BRAT": false,
+      "attachment-manager:切换附件文件夹的“显示/隐藏”": false,
       "switcher:打开快速切换": false,
       "graph:查看关系图谱": false,
       "canvas:新建白板": false,
       "daily-notes:打开/创建今天的日记": false,
       "templates:插入模板": false,
       "command-palette:打开命令面板": false,
-      "templater-obsidian:Templater": false,
-      "attachment-manager:切换附件文件夹的“显示/隐藏”": false,
-      "workspaces:管理工作区布局": false
+      "workspaces:管理工作区布局": false,
+      "obsidian42-brat:BRAT": false,
+      "templater-obsidian:Templater": false
     }
   },
-  "active": "3e12b966f005ea7d",
+  "active": "eb638d446f0b8139",
   "lastOpenFiles": [
+    "日记/2024/2024-01-26_Fri.md",
+    "文献笔记/@vaswani2017attention.md",
+    "启动页.canvas",
+    "其他/模板库插件.md",
+    "其他/关于：木一Benature.md",
+    "README.md",
+    "setting/最近笔记.md",
+    "机构/DeepMind.md",
+    "机构/OpenAI.md",
     "文献笔记/@abadi2016tensorflow.md",
     "文献笔记/@brown2020language.md",
     "文献笔记/@dai2023why.md",
     "机构/Microsoft.md",
     "机构/PKU.md",
-    "机构/DeepMind.md",
     "文献笔记/@glaese2022improving.md",
     "文献笔记/@gulati2020conformer.md",
     "文献笔记/@mikolov2013distributed.md",
@@ -309,17 +306,10 @@
     "文献笔记/@srinivas2021bottleneck.md",
     "文献笔记/@srivastava2014dropout.md",
     "文献笔记/@sutskever2014sequence.md",
-    "文献笔记/@vaswani2017attention.md",
     "机构/University of Toronto.md",
     "机构/UC Berkeley.md",
     "机构/Stanford.md",
-    "机构/OpenAI.md",
     "机构/Google.md",
-    "研究人员/Ilya Sutskever.md",
-    "研究人员/Li Fei-Fei.md",
-    "科研/AI.md",
-    "科研/ML.md",
-    "科研/DL.md",
     "机构",
     "日记/2023",
     "setting/templates/template-folder",

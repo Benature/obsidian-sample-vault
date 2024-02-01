@@ -117,8 +117,8 @@ var MetadataHiderSettingTab = class extends import_obsidian.PluginSettingTab {
     containerEl.empty();
     new import_obsidian.Setting(containerEl).setName({ en: "Add custom entry icon", zh: "\u6DFB\u52A0\u81EA\u5B9A\u4E49\u56FE\u6807", "zh-TW": "\u65B0\u589E\u81EA\u5B9A\u7FA9\u5716\u793A" }[lang]).setDesc({
       "en": "Input entry name and icon url. The image will be automatically loaded on the left side. If there is no image shown on the left side, please check the image url or network connection.",
-      "zh": "\u8F93\u5165\u6587\u6863\u5C5E\u6027\u540D\u79F0\u548C\u56FE\u6807\u94FE\u63A5\u3002\u56FE\u6807\u5C06\u5728\u5DE6\u4FA7\u81EA\u52A8\u9884\u89C8\uFF0C\u5982\u679C\u5DE6\u4FA7\u6CA1\u6709\u663E\u793A\u56FE\u7247\uFF0C\u8BF7\u68C0\u67E5\u56FE\u7247\u94FE\u63A5\u662F\u5426\u6B63\u786E\u6216\u7F51\u7EDC\u8FDE\u63A5\u3002\u5982\uFF1A\u300C\u8C46\u74E3\uFF0Chttps://img1.doubanio.com/favicon.ico\u300D",
-      "zh-TW": "\u8F38\u5165\u6587\u4EF6\u5C6C\u6027\u540D\u7A31\u548C\u5716\u793A\u93C8\u63A5\u3002\u5716\u793A\u5C07\u5728\u5DE6\u5074\u81EA\u52D5\u9810\u89BD\uFF0C\u5982\u679C\u5DE6\u5074\u6C92\u6709\u986F\u793A\u5716\u7247\uFF0C\u8ACB\u6AA2\u67E5\u5716\u7247\u93C8\u63A5\u662F\u5426\u6B63\u78BA\u6216\u7DB2\u7D61\u9023\u7DDA\u3002\u5982\uFF1A\u300Cfacebook\uFF0Chttps://www.facebook.com/favicon.ico\u300D"
+      "zh": "\u8F93\u5165\u6587\u6863\u5C5E\u6027\u540D\u79F0\u548C\u56FE\u6807\u94FE\u63A5\u3002\u56FE\u6807\u5C06\u5728\u5DE6\u4FA7\u81EA\u52A8\u9884\u89C8\uFF0C\u5982\u679C\u5DE6\u4FA7\u6CA1\u6709\u663E\u793A\u56FE\u7247\uFF0C\u8BF7\u68C0\u67E5\u56FE\u7247\u94FE\u63A5\u662F\u5426\u6B63\u786E\u6216\u7F51\u7EDC\u8FDE\u63A5\u3002\u8F93\u5165\u793A\u4F8B\uFF1A\u300C\u8C46\u74E3\uFF0Chttps://img1.doubanio.com/favicon.ico\u300D",
+      "zh-TW": "\u8F38\u5165\u6587\u4EF6\u5C6C\u6027\u540D\u7A31\u548C\u5716\u793A\u93C8\u63A5\u3002\u5716\u793A\u5C07\u5728\u5DE6\u5074\u81EA\u52D5\u9810\u89BD\uFF0C\u5982\u679C\u5DE6\u5074\u6C92\u6709\u986F\u793A\u5716\u7247\uFF0C\u8ACB\u6AA2\u67E5\u5716\u7247\u93C8\u63A5\u662F\u5426\u6B63\u78BA\u6216\u7DB2\u7D61\u9023\u7DDA\u3002\u8F38\u5165\u7BC4\u4F8B\uFF1A\u300Cfacebook\uFF0Chttps://www.facebook.com/favicon.ico\u300D"
     }[lang]).addButton((button) => {
       button.setTooltip("Add new icon").setButtonText("+").setCta().onClick(async () => {
         this.plugin.settings.IconAttrList.push({
@@ -130,25 +130,27 @@ var MetadataHiderSettingTab = class extends import_obsidian.PluginSettingTab {
       });
     });
     this.plugin.settings.IconAttrList.forEach((iconSetting, index) => {
-      const s = new import_obsidian.Setting(this.containerEl).then((setting) => {
-        let span = setting.descEl.createEl("span", { text: { en: "icon preview:", zh: "\u56FE\u6807\u9884\u89C8:", "zh-TW": "\u5716\u793A\u9810\u89BD:" }[lang] });
-        span.setAttribute("style", `margin-right: 2px; `);
-        let img = setting.descEl.createEl("img", { cls: "metadata-icon-preview" });
-        img.setAttribute("src", iconSetting.image);
-        img.setAttribute("width", `20px`);
-        img.setAttribute("style", `background-color: transparent;`);
-      }).addSearch((cb) => {
+      const s = new import_obsidian.Setting(this.containerEl);
+      let span = s.descEl.createEl("span", { text: { en: "icon preview:", zh: "\u56FE\u6807\u9884\u89C8:", "zh-TW": "\u5716\u793A\u9810\u89BD:" }[lang] });
+      span.setAttribute("style", `margin-right: 2px; `);
+      let img = s.descEl.createEl("img", { cls: "metadata-icon-preview" });
+      img.setAttribute("src", iconSetting.image);
+      img.setAttribute("width", `20px`);
+      img.setAttribute("style", `background-color: transparent;`);
+      s.addSearch((cb) => {
         cb.setPlaceholder({ en: "entry name", zh: "\u6587\u6863\u5C5E\u6027\u540D\u79F0", "zh-TW": "\u6587\u4EF6\u5C6C\u6027\u540D\u7A31" }[lang]).setValue(iconSetting.entry).onChange(async (newValue) => {
           this.plugin.settings.IconAttrList[index].entry = newValue;
           await this.plugin.saveSettings();
         });
-      }).addSearch((cb) => {
+      });
+      s.addSearch((cb) => {
         cb.setPlaceholder({ en: "image url", zh: "\u56FE\u6807\u94FE\u63A5", "zh-TW": "\u5716\u793A\u93C8\u63A5" }[lang]).setValue(iconSetting.image).onChange(async (newValue) => {
           this.plugin.settings.IconAttrList[index].image = newValue;
           await this.plugin.saveSettings();
-          this.display();
+          img.setAttribute("src", iconSetting.image);
         });
-      }).addExtraButton((cb) => {
+      });
+      s.addExtraButton((cb) => {
         cb.setIcon("cross").setTooltip("Delete").onClick(async () => {
           this.plugin.settings.IconAttrList.splice(index, 1);
           await this.plugin.saveSettings();

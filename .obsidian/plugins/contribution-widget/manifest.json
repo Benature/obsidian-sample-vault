@@ -1,0 +1,11 @@
+{
+	"id": "contribution-widget",
+	"name": "Contribution Widget",
+	"version": "0.1.0",
+	"minAppVersion": "0.14.0",
+	"description": "just a simple but powerful plugin to add emoji to your notes",
+	"author": "vran",
+	"authorUrl": "https://github.com/vran-dev",
+	"isDesktopOnly": false,
+	"fundingUrl": "https://www.buymeacoffee.com/vran"
+}

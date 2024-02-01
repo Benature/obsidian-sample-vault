@@ -1,26 +1,23 @@
 /* * Hide the metadata that is empty */
-.mod-root .metadata-property:has(.metadata-property-value .mod-truncate:empty),
-.mod-root
-  .metadata-property:has(
-    .metadata-property-value
-      input.metadata-input[type="number"]:placeholder-shown
-  ),
-.mod-root .metadata-property[data-property-type="text"]:has(input[type="date"]),
-.mod-root
-  .metadata-property:has(
-    .metadata-property-value
-      .multi-select-container
-      > .multi-select-input:first-child
-  ) {
-  display: none;
+.metadata-property:has(.metadata-property-value .mod-truncate:empty),
+.metadata-property:has(
+		.metadata-property-value
+			input.metadata-input[type="number"]:placeholder-shown
+	),
+.metadata-property[data-property-type="text"]:has(input[type="date"]),
+.metadata-property:has(
+		.metadata-property-value
+			.multi-select-container
+			> .multi-select-input:first-child
+	) {
+	display: none;
 }
 
 /* * visualize the last metadata property.
    * Make sure to enable Button: add document attribution */
-.mod-root
-  div.view-content
-  div.metadata-content
-  > div.metadata-properties
-  > div.metadata-property:last-child {
-  display: flex;
+div.view-content
+	div.metadata-content
+	> div.metadata-properties
+	> div.metadata-property:last-child {
+	display: flex;
 }

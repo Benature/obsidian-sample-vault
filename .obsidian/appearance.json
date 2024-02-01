@@ -3,12 +3,13 @@
   "cssTheme": "Minimal",
   "theme": "obsidian",
   "enabledCssSnippets": [
-    "heading",
-    "metadata-hider-auto-gen",
     "木一Benature自定义",
     "木一Benature自定义样式",
     "supercharged-links-gen",
+    "metadata-hider-auto-gen",
+    "heading",
+    "diaryBetween",
     "dataview",
-    "diaryBetween"
+    "contribution-widget"
   ]
 }

@@ -1,8 +1,10 @@
 {
   "id": "obsidian-underline",
   "name": "Underline",
+  "version": "1.2.2",
   "description": "Add underline(`<u>xxx</u>`) with shortcut, and `<center>xxx</center>`, `[[#xxx]]`, `[[#^xxx]]`",
-  "isDesktopOnly": false,
-  "js": "main.js",
-  "version": "1.2.1"
+  "author": "Benature",
+  "authorUrl": "https://github.com/Benature",
+  "fundingUrl": "https://www.buymeacoffee.com/benature",
+  "isDesktopOnly": false
 }

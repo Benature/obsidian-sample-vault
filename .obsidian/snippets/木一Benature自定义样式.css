@@ -27,8 +27,8 @@ body {
 
 .markdown-preview-view img {
   display: block;
-  margin-top: 20pt;
-  margin-bottom: 20pt;
+  /* margin-top: 20pt;
+  margin-bottom: 20pt; */
   margin-left: auto;
   margin-right: auto;
   /* width: 40%; experiment with values */
@@ -81,15 +81,18 @@ body {
   .workspace-tab-header-inner-icon::after {
   position: relative;
   top: 1px;
-  content: "🎈";
+  content: "🌟";
 }
-.workspace-tab-header[aria-label="pin"] .workspace-tab-header-inner-icon > svg {
+.workspace-tab-header[aria-label="最近笔记"]
+  .workspace-tab-header-inner-icon
+  > svg {
   display: none;
 }
-.workspace-tab-header[aria-label="pin"] .workspace-tab-header-inner-icon:after {
+.workspace-tab-header[aria-label="最近笔记"]
+  .workspace-tab-header-inner-icon:after {
   position: relative;
   top: 2px;
-  content: "🌟";
+  content: "🎈";
   font-size: 20px;
 }
 

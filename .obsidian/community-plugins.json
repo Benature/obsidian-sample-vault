@@ -7,11 +7,13 @@
   "templater-obsidian",
   "metadata-hider",
   "metadata-icon",
-  "obsidian-underline",
   "easy-typing-obsidian",
   "attachment-manager",
   "supercharged-links-obsidian",
   "calendar",
   "share-my-plugin-list",
-  "obsidian-auto-link-title"
+  "obsidian-auto-link-title",
+  "contribution-widget",
+  "contribution-graph",
+  "obsidian-underline"
 ]

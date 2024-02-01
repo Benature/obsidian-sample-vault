@@ -30,16 +30,20 @@ module.exports = __toCommonJS(main_exports);
 var import_obsidian = require("obsidian");
 var ShareMyPluginList = class extends import_obsidian.Plugin {
   async onload() {
+    let lang = window.localStorage.getItem("language");
+    if (lang == null || ["en", "zh", "zh-TW"].indexOf(lang) == -1) {
+      lang = "en";
+    }
     this.addCommand({
       id: "generate-list",
-      name: "Generate List",
+      name: { en: "Export as List", "zh": "\u5217\u8868\u5F62\u5F0F\u5BFC\u51FA\u63D2\u4EF6\u540D\u5355", "zh-TW": "\u6E05\u55AE\u5F62\u5F0F\u532F\u51FA\u63D2\u4EF6\u540D\u55AE" }[lang],
       editorCallback: (editor, view) => {
         this.genList(editor);
       }
     });
     this.addCommand({
       id: "generate-table",
-      name: "Generate Table",
+      name: { en: "Export as Table", zh: "\u8868\u683C\u5F62\u5F0F\u5BFC\u51FA\u63D2\u4EF6\u540D\u5355", "zh-TW": "\u8868\u683C\u5F62\u5F0F\u532F\u51FA\u63D2\u4EF6\u540D\u55AE" }[lang],
       editorCallback: (editor, view) => {
         this.genTable(editor);
       }
@@ -50,9 +54,12 @@ var ShareMyPluginList = class extends import_obsidian.Plugin {
     let text = [];
     for (let key in plugins) {
       const m = plugins[key].manifest;
-      let line = `- [**${m.name}**](https://obsidian.md/plugins?id=${m.id})`;
+      let line = `- [**${m.name}**](${m.pluginUrl})`;
       if (m.author && m.authorUrl) {
-        line += `by [*${m.author}*](${m.authorUrl})`;
+        line += ` by [*${m.author}*](${m.authorUrl})`;
+      }
+      if (m.fundingUrl) {
+        line += ` [\u2661](${m.fundingUrl})`;
       }
       text.push(line);
     }
@@ -60,22 +67,62 @@ var ShareMyPluginList = class extends import_obsidian.Plugin {
   }
   async genTable(editor) {
     const plugins = this.getPlugins();
+    const lang = window.localStorage.getItem("language");
     let text = [""];
-    text.push("|Plugin|Author|Version|");
-    text.push("|------|------|------|");
+    switch (lang) {
+      case "zh":
+        text.push("|\u63D2\u4EF6\u540D|\u4F5C\u8005|\u7248\u672C|");
+        text.push("|-----|---|----|");
+        break;
+      case "zh-TW":
+        text.push("|\u63D2\u4EF6\u540D|\u4F5C\u8005|\u7248\u672C|");
+        text.push("|-----|---|----|");
+        break;
+      default:
+        text.push("|Name|Author|Version|");
+        text.push("|----|------|-------|");
+        break;
+    }
     for (let key in plugins) {
       const m = plugins[key].manifest;
-      let name = `[**${m.name}**](https://obsidian.md/plugins?id=${m.id})`;
+      let name = `[**${m.name}**](${m.pluginUrl})`;
       let author = "";
       if (m.author && m.authorUrl) {
         author = `[${m == null ? void 0 : m.author.replace(/<.*?@.*?\..*?>/g, "")}](${m == null ? void 0 : m.authorUrl})`;
+      }
+      if (m.fundingUrl && typeof m.fundingUrl == "string") {
+        author += ` [\u2661](${m.fundingUrl})`;
       }
       text.push(`|${name}|${author}|${m == null ? void 0 : m.version}|`);
     }
     editor.replaceSelection(text.join("\n") + "\n");
   }
   getPlugins() {
-    return this.app.plugins.plugins;
+    let plugins = this.app.plugins.plugins;
+    for (let name in plugins) {
+      plugins[name].manifest.pluginUrl = `https://obsidian.md/plugins?id=${plugins[name].manifest.id}`;
+    }
+    if ("obsidian42-brat" in plugins == false) {
+      return plugins;
+    }
+    const BRAT = plugins["obsidian42-brat"];
+    for (let p of BRAT.settings.pluginList) {
+      const pSplit = p.split("/");
+      let githubAuthor = pSplit[0], name = pSplit[1];
+      let find = false;
+      if (name.toLowerCase() in plugins) {
+        find = true;
+      } else {
+        name = name.toLowerCase().replace(/^obsidian-?/g, "");
+        if (name in plugins) {
+          find = true;
+        }
+      }
+      if (find) {
+        plugins[name].manifest.pluginUrl = `https://github.com/${p}`;
+      }
+    }
+    return plugins;
   }
   onunload() {
   }

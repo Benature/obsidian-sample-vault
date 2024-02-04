@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "README.md",
+                "file": "其他/关于：木一Benature.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -43,6 +43,7 @@
               "state": {
                 "file": "setting/置顶通知区.md",
                 "mode": "preview",
+                "backlinks": true,
                 "source": false
               },
               "pinned": true
@@ -108,7 +109,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "README.md",
+                "file": "其他/关于：木一Benature.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -125,7 +126,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "README.md",
+                "file": "其他/关于：木一Benature.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -163,7 +164,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "README.md"
+                "file": "其他/关于：木一Benature.md"
               }
             }
           },
@@ -185,7 +186,7 @@
             "state": {
               "type": "file-properties",
               "state": {
-                "file": "README.md"
+                "file": "其他/关于：木一Benature.md"
               }
             }
           },
@@ -198,6 +199,7 @@
               "state": {
                 "file": "setting/最近笔记.md",
                 "mode": "preview",
+                "backlinks": true,
                 "source": false
               },
               "pinned": true
@@ -216,7 +218,7 @@
             "state": {
               "type": "localgraph",
               "state": {
-                "file": "README.md",
+                "file": "其他/关于：木一Benature.md",
                 "options": {
                   "collapse-filter": true,
                   "search": "",
@@ -283,12 +285,12 @@
   },
   "active": "eb638d446f0b8139",
   "lastOpenFiles": [
+    "README.md",
     "日记/2024/2024-01-26_Fri.md",
     "文献笔记/@vaswani2017attention.md",
     "启动页.canvas",
     "其他/模板库插件.md",
     "其他/关于：木一Benature.md",
-    "README.md",
     "setting/最近笔记.md",
     "机构/DeepMind.md",
     "机构/OpenAI.md",

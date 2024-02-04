@@ -56,11 +56,9 @@ var ShareMyPluginList = class extends import_obsidian.Plugin {
       const m = plugins[key].manifest;
       let line = `- [**${m.name}**](${m.pluginUrl})`;
       if (m.author && m.authorUrl) {
-        line += ` by [*${m.author}*](${m.authorUrl})`;
+        line += ` by [*${m.author2}*](${m.authorUrl})`;
       }
-      if (m.fundingUrl) {
-        line += ` [\u2661](${m.fundingUrl})`;
-      }
+      line += processFunding(m);
       text.push(line);
     }
     editor.replaceSelection(text.join("\n") + "\n");
@@ -88,11 +86,9 @@ var ShareMyPluginList = class extends import_obsidian.Plugin {
       let name = `[**${m.name}**](${m.pluginUrl})`;
       let author = "";
       if (m.author && m.authorUrl) {
-        author = `[${m == null ? void 0 : m.author.replace(/<.*?@.*?\..*?>/g, "")}](${m == null ? void 0 : m.authorUrl})`;
+        author = `[${m == null ? void 0 : m.author2}](${m == null ? void 0 : m.authorUrl})`;
       }
-      if (m.fundingUrl && typeof m.fundingUrl == "string") {
-        author += ` [\u2661](${m.fundingUrl})`;
-      }
+      author += processFunding(m);
       text.push(`|${name}|${author}|${m == null ? void 0 : m.version}|`);
     }
     editor.replaceSelection(text.join("\n") + "\n");
@@ -101,6 +97,7 @@ var ShareMyPluginList = class extends import_obsidian.Plugin {
     let plugins = this.app.plugins.plugins;
     for (let name in plugins) {
       plugins[name].manifest.pluginUrl = `https://obsidian.md/plugins?id=${plugins[name].manifest.id}`;
+      plugins[name].manifest["author2"] = plugins[name].manifest.author.replace(/<.*?@.*?\..*?>/g, "").trim();
     }
     if ("obsidian42-brat" in plugins == false) {
       return plugins;
@@ -127,3 +124,17 @@ var ShareMyPluginList = class extends import_obsidian.Plugin {
   onunload() {
   }
 };
+function processFunding(m) {
+  let info = "";
+  if (m.fundingUrl) {
+    if (typeof m.fundingUrl == "string") {
+      info += ` [\u2661](${m.fundingUrl})`;
+    } else if (typeof m.fundingUrl == "object") {
+      for (let key in m.fundingUrl) {
+        console.log(key);
+        info += ` [\u2661](${m.fundingUrl[key]})`;
+      }
+    }
+  }
+  return info;
+}

@@ -16,6 +16,7 @@
 	margin-top: 26px;
 	justify-content: center;
 	border-radius: 8px;
+	background-color: var(--background-primary-alt);
 }
 
 .contribution-graph .main.fill-the-screen {
@@ -64,7 +65,6 @@
 	align-items: flex-start;
 	flex-wrap: nowrap;
 	justify-content: flex-start;
-
 }
 
 .contribution-graph .main .charts.default .column {
@@ -215,7 +215,11 @@
 	justify-content: center;
 }
 
-.contribution-graph .calendar .month-container .week-indicator-container .cell.week-indicator {
+.contribution-graph
+	.calendar
+	.month-container
+	.week-indicator-container
+	.cell.week-indicator {
 	font-size: 0.6rem;
 	line-height: 1.5;
 	text-align: center;
@@ -271,17 +275,17 @@
 }
 
 .color-indicator {
-  height: 18px;
-  width: 18px;
-  border-radius: 50%;
-  border-width: 1px;
-  border-color: var(--background-modifier-border);
-  border-style: solid;
+	height: 18px;
+	width: 18px;
+	border-radius: 50%;
+	border-width: 1px;
+	border-color: var(--background-modifier-border);
+	border-style: solid;
 }
 
 .color-indicator:hover {
-  border-color: var(--interactive-accent);
-  opacity: 0.6;
+	border-color: var(--interactive-accent);
+	opacity: 0.6;
 }
 
 /* default cell rule indicator */
@@ -402,7 +406,10 @@
 	gap: 8px;
 }
 
-.contribution-graph-modal-form .form-item .form-vertical-content>input[type="text"] {
+.contribution-graph-modal-form
+	.form-item
+	.form-vertical-content
+	> input[type="text"] {
 	flex-grow: 1;
 	border-width: 0px 0px 1px 0px;
 	padding: 3px;
@@ -746,8 +753,9 @@
 	display: flex;
 	flex-direction: column;
 	flex-wrap: nowrap;
-	overflow-x: scroll;
+	overflow-x: auto;
 	gap: 6px;
+	width: 100%;
 }
 
 .tab-container .tab-titles {
@@ -838,13 +846,22 @@
 	color: var(--text-muted);
 }
 
-.contribution-graph .activity-container .activity-content .activity-list .activity-item {
+.contribution-graph
+	.activity-container
+	.activity-content
+	.activity-list
+	.activity-item {
 	display: flex;
 	flex-direction: row;
 	align-items: center;
 }
 
-.contribution-graph .activity-container .activity-content .activity-list .activity-item .label {
+.contribution-graph
+	.activity-container
+	.activity-content
+	.activity-list
+	.activity-item
+	.label {
 	color: var(--text-muted);
 	padding: 0.4rem 0.6rem;
 }
@@ -857,23 +874,68 @@
 	width: 100%;
 }
 
-.contribution-graph .activity-container .activity-content .activity-navigation a {
+.contribution-graph
+	.activity-container
+	.activity-content
+	.activity-navigation
+	a {
 	color: var(--text-muted);
 	text-decoration: none;
 	padding: 0.4rem 0.6rem;
 }
 
 .contribution-graph .activity-container .close-button {
-  position: absolute;
-  right: 0;
-  top: 0;
-  color: var(--text-faint);
-  box-shadow: none;
-  border-width: 0px;
-  background-color: transparent;
-  cursor: pointer;
+	position: absolute;
+	right: 0;
+	top: 0;
+	color: var(--text-faint);
+	box-shadow: none;
+	border-width: 0px;
+	background-color: transparent;
+	cursor: pointer;
 }
 
 .contribution-graph .activity-container .close-button:hover {
-  color: var(--text-accent);
+	color: var(--text-accent);
+}
+
+/* about */
+.about-container {
+	display: flex;
+	flex-direction: column;
+	align-items: baseline;
+	gap: 1rem;
+}
+
+.about-container .about-item {
+	display: flex;
+	flex-direction: row;
+	gap: 0.8rem;
+	width: 100%;
+}
+
+.about-container .about-item .label {
+	min-width: 88px;
+}
+
+.about-container .about-item.center {
+	justify-content: center;
+}
+
+.about-container .about-item img {
+	max-width: 200px;
+	width: 200px;
+}
+
+.input-range-value-label {
+	font-size: 0.8rem;
+	color: var(--text-muted);
+	cursor: pointer;
+	padding: 4px;
+	border-radius: 4px;
+}
+
+.input-range-value-label:hover {
+	background: var(--interactive-accent);
+	color: var(--text-on-accent);
 }

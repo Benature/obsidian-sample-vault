@@ -5,6 +5,7 @@ github: https://github.com/Benature
 知乎: https://www.zhihu.com/people/ben-benedict/posts
 Bilibili: https://space.bilibili.com/27611284
 小红书: https://www.xiaohongshu.com/user/profile/5b63f42ce8ac2b773f832471
+notion: https://benature.notion.site/Blog-5e014dce552e4997b6c2bd153ffdc461?pvs=74
 aliases:
   - About
 ---

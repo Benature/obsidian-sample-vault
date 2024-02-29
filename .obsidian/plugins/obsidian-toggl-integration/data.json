@@ -1,0 +1,10 @@
+{
+  "apiToken": null,
+  "charLimitStatusBar": 40,
+  "updateInRealTime": true,
+  "workspace": {
+    "id": "none",
+    "name": "None selected"
+  },
+  "hasDismissedAlert": false
+}

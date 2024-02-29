@@ -1,9 +1,9 @@
 {
-	"id": "share-my-plugin-list",
-	"name": "Share my plugin list",
-	"version": "0.1.0",
+	"id": "plugin-reloader",
+	"name": "Plugin Reloader",
+	"version": "0.0.2",
 	"minAppVersion": "0.15.0",
-	"description": "Share the enabled plugins in list/table format.",
+	"description": "Manually reload plugins.",
 	"author": "Benature",
 	"authorUrl": "https://github.com/Benature",
 	"fundingUrl": {

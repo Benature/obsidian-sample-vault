@@ -45,6 +45,7 @@ var MetadataHider = class extends import_obsidian.Plugin {
     this.updateCSS();
   }
   onunload() {
+    this.styleTag.remove();
   }
   updateCSS() {
     var _a;

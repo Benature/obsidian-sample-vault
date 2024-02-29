@@ -29,7 +29,16 @@ h3::after,
 h4::after,
 h5::after,
 h6::after {
-  /* color: rgb(207, 218, 179); */
+  text-shadow: 1px 2px 5px rgb(240, 244, 223);
+}
+.theme-dark .HyperMD-header::after,
+.theme-dark .cm-header:not(.cm-formatting-header)::after,
+h1::after,
+h2::after,
+h3::after,
+h4::after,
+h5::after,
+h6::after {
   text-shadow: 1px 2px 5px rgb(219, 127, 127);
 }
 .HyperMD-header-1,

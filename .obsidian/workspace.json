@@ -11,14 +11,12 @@
             "id": "69221ed538ecdec4",
             "type": "leaf",
             "state": {
-              "type": "canvas",
+              "type": "markdown",
               "state": {
-                "file": "启动页.canvas",
-                "viewState": {
-                  "x": 80.00284431137732,
-                  "y": 251.0016497005987,
-                  "zoom": -0.10473841282231354
-                }
+                "file": "日记/2024/2024-02-29_Thu.md",
+                "mode": "source",
+                "backlinks": true,
+                "source": false
               }
             }
           }
@@ -104,7 +102,7 @@
       {
         "id": "90a19d225e2293e8",
         "type": "tabs",
-        "dimension": 33.33333333333333,
+        "dimension": 54.004576659038904,
         "children": [
           {
             "id": "f15815504c22d067",
@@ -112,7 +110,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "启动页.canvas",
+                "file": "日记/2024/2024-02-29_Thu.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -129,7 +127,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "启动页.canvas",
+                "file": "日记/2024/2024-02-29_Thu.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -167,7 +165,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "启动页.canvas"
+                "file": "日记/2024/2024-02-29_Thu.md"
               }
             }
           },
@@ -189,7 +187,7 @@
             "state": {
               "type": "file-properties",
               "state": {
-                "file": "启动页.canvas"
+                "file": "日记/2024/2024-02-29_Thu.md"
               }
             }
           },
@@ -212,24 +210,9 @@
         "currentTab": 7
       },
       {
-        "id": "7a77076b01a91a50",
-        "type": "tabs",
-        "dimension": 38.27683615819209,
-        "children": [
-          {
-            "id": "fd15b39544c6ab58",
-            "type": "leaf",
-            "state": {
-              "type": "toggl-report",
-              "state": {}
-            }
-          }
-        ]
-      },
-      {
         "id": "454ed639f28082be",
         "type": "tabs",
-        "dimension": 28.389830508474578,
+        "dimension": 45.99542334096111,
         "children": [
           {
             "id": "d72f075c7d7e8c0c",
@@ -237,7 +220,7 @@
             "state": {
               "type": "localgraph",
               "state": {
-                "file": "启动页.canvas",
+                "file": "日记/2024/2024-02-29_Thu.md",
                 "options": {
                   "collapse-filter": true,
                   "search": "",
@@ -280,6 +263,14 @@
                 }
               }
             }
+          },
+          {
+            "id": "fd15b39544c6ab58",
+            "type": "leaf",
+            "state": {
+              "type": "toggl-report",
+              "state": {}
+            }
           }
         ]
       }
@@ -302,12 +293,14 @@
       "obsidian42-brat:BRAT": false
     }
   },
-  "active": "fd15b39544c6ab58",
+  "active": "69221ed538ecdec4",
   "lastOpenFiles": [
+    "日记/2024/2024-02-28_Wed.md",
+    "日记/2024/2024-02-29_Thu.md",
+    "日记/2024/2024-01-26_Fri.md",
+    "README.md",
     "启动页.canvas",
     "其他/关于：木一Benature.md",
-    "README.md",
-    "日记/2024/2024-01-26_Fri.md",
     "文献笔记/@vaswani2017attention.md",
     "其他/模板库插件.md",
     "setting/最近笔记.md",
@@ -329,7 +322,6 @@
     "文献笔记/@sutskever2014sequence.md",
     "机构/University of Toronto.md",
     "机构/UC Berkeley.md",
-    "机构/Stanford.md",
     "机构",
     "日记/2023",
     "setting/templates/template-folder",

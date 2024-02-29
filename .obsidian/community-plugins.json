@@ -16,5 +16,6 @@
   "contribution-widget",
   "contribution-graph",
   "obsidian-underline",
-  "obsidian-toggl-integration"
+  "obsidian-toggl-integration",
+  "plugin-reloader"
 ]

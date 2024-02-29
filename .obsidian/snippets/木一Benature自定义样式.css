@@ -57,6 +57,10 @@ body {
 }
 
 [data-link-tags="researcher"] {
+  background-color: rgba(206, 206, 247, 0.534);
+}
+
+.theme-dark [data-link-tags="researcher"] {
   background-color: rgba(54, 54, 194, 0.534);
   border-radius: 3px;
   padding: 0px 2px;

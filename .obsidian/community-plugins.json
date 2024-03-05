@@ -17,5 +17,6 @@
   "contribution-graph",
   "obsidian-underline",
   "obsidian-toggl-integration",
-  "plugin-reloader"
+  "plugin-reloader",
+  "default-query-in-backlink"
 ]

@@ -1,7 +1,7 @@
 {
 	"id": "share-my-plugin-list",
 	"name": "Share my plugin list",
-	"version": "0.1.0",
+	"version": "0.2.0",
 	"minAppVersion": "0.15.0",
 	"description": "Share the enabled plugins in list/table format.",
 	"author": "Benature",

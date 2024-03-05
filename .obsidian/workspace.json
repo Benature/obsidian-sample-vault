@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "日记/2024/2024-02-29_Thu.md",
+                "file": "README.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -102,7 +102,7 @@
       {
         "id": "90a19d225e2293e8",
         "type": "tabs",
-        "dimension": 54.004576659038904,
+        "dimension": 54.00457665903888,
         "children": [
           {
             "id": "f15815504c22d067",
@@ -110,7 +110,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "日记/2024/2024-02-29_Thu.md",
+                "file": "README.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -127,7 +127,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "日记/2024/2024-02-29_Thu.md",
+                "file": "README.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -165,7 +165,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "日记/2024/2024-02-29_Thu.md"
+                "file": "README.md"
               }
             }
           },
@@ -187,7 +187,7 @@
             "state": {
               "type": "file-properties",
               "state": {
-                "file": "日记/2024/2024-02-29_Thu.md"
+                "file": "README.md"
               }
             }
           },
@@ -212,7 +212,7 @@
       {
         "id": "454ed639f28082be",
         "type": "tabs",
-        "dimension": 45.99542334096111,
+        "dimension": 45.99542334096112,
         "children": [
           {
             "id": "d72f075c7d7e8c0c",
@@ -220,7 +220,7 @@
             "state": {
               "type": "localgraph",
               "state": {
-                "file": "日记/2024/2024-02-29_Thu.md",
+                "file": "README.md",
                 "options": {
                   "collapse-filter": true,
                   "search": "",
@@ -289,14 +289,15 @@
       "command-palette:Open command palette": false,
       "random-note:Open random note": false,
       "workspaces:Manage workspace layouts": false,
-      "templater-obsidian:Templater": false,
-      "obsidian42-brat:BRAT": false
+      "obsidian42-brat:BRAT": false,
+      "templater-obsidian:Templater": false
     }
   },
   "active": "69221ed538ecdec4",
   "lastOpenFiles": [
-    "日记/2024/2024-02-28_Wed.md",
+    "日记/2024/2024-03-05_Tue.md",
     "日记/2024/2024-02-29_Thu.md",
+    "日记/2024/2024-02-28_Wed.md",
     "日记/2024/2024-01-26_Fri.md",
     "README.md",
     "启动页.canvas",
@@ -321,7 +322,6 @@
     "文献笔记/@srivastava2014dropout.md",
     "文献笔记/@sutskever2014sequence.md",
     "机构/University of Toronto.md",
-    "机构/UC Berkeley.md",
     "机构",
     "日记/2023",
     "setting/templates/template-folder",

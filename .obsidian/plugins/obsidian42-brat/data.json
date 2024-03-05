@@ -1,5 +1,6 @@
 {
   "pluginList": [
+    "Benature/obsidian-default-query-in-backlink",
     "vran-dev/obsidian-contribution-graph"
   ],
   "pluginSubListFrozenVersion": [],

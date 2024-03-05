@@ -33,12 +33,12 @@ h6::after {
 }
 .theme-dark .HyperMD-header::after,
 .theme-dark .cm-header:not(.cm-formatting-header)::after,
-h1::after,
-h2::after,
-h3::after,
-h4::after,
-h5::after,
-h6::after {
+.theme-dark h1::after,
+.theme-dark h2::after,
+.theme-dark h3::after,
+.theme-dark h4::after,
+.theme-dark h5::after,
+.theme-dark h6::after {
   text-shadow: 1px 2px 5px rgb(219, 127, 127);
 }
 .HyperMD-header-1,

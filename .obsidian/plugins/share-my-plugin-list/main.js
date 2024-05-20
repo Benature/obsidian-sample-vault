@@ -37,7 +37,7 @@ __export(main_exports, {
   default: () => ShareMyPlugin
 });
 module.exports = __toCommonJS(main_exports);
-var import_obsidian4 = require("obsidian");
+var import_obsidian5 = require("obsidian");
 
 // src/setting/setting.ts
 var import_obsidian3 = require("obsidian");
@@ -1705,7 +1705,8 @@ var DEFAULT_SETTINGS = {
   exportFileOpen: true,
   exportFileNewLeaf: true,
   exportFileWhenLoaded: false,
-  debugMode: false
+  debugMode: false,
+  descriptionLength: 50
 };
 var ShareMyPluginSettingTab = class extends import_obsidian3.PluginSettingTab {
   constructor(app, plugin) {
@@ -1715,8 +1716,19 @@ var ShareMyPluginSettingTab = class extends import_obsidian3.PluginSettingTab {
   display() {
     let { containerEl } = this;
     containerEl.empty();
+    new import_obsidian3.Setting(this.containerEl).setName("Max length of description").setDesc("-1: do not output description. 0: output description no matter how long it is. >0: output description up to the specified length.").addText((cb) => {
+      cb.setPlaceholder("length").setValue(this.plugin.settings.descriptionLength.toString()).onChange(async (newValue) => {
+        const v = Number(newValue);
+        if (Number.isNaN(v)) {
+          new import_obsidian3.Notice(`The length must be a number!`);
+        } else {
+          this.plugin.settings.descriptionLength = v;
+          await this.plugin.saveSettings();
+        }
+      });
+    });
     containerEl.createEl("h2", { text: "Export to file" });
-    new import_obsidian3.Setting(this.containerEl).setName("Path of file to export").setDesc("IMPORTANT: This file will be overwritten by the plugin, i.e., old content would be deleted.").addSearch((cb) => {
+    new import_obsidian3.Setting(this.containerEl).setName("Path of file to export").setDesc("IMPORTANT: This file will be overwritten by the plugin, i.e., old content would be deleted.").addText((cb) => {
       new FileSuggest(this.app, cb.inputEl);
       cb.setPlaceholder("output/ShareMyPlugin.md").setValue(this.plugin.settings.exportFilePath).onChange(async (newValue) => {
         this.plugin.settings.exportFilePath = newValue;
@@ -1735,7 +1747,7 @@ var ShareMyPluginSettingTab = class extends import_obsidian3.PluginSettingTab {
       });
     });
     if (this.plugin.settings.exportFileOpen) {
-      new import_obsidian3.Setting(containerEl).setName("Open in new leaf").setDesc("Open the exported file in a new leaf.").addToggle((toggle) => {
+      new import_obsidian3.Setting(containerEl).setName("Open in new tab").setDesc("Open the exported file in a new tab (leaf).").addToggle((toggle) => {
         toggle.setValue(this.plugin.settings.exportFileNewLeaf).onChange(async (value) => {
           this.plugin.settings.exportFileNewLeaf = value;
           await this.plugin.saveSettings();
@@ -1770,11 +1782,13 @@ var EN = {
     GenerateActiveTable: "Export active plugins as table",
     GenerateInactiveList: "Export inactive plugins as list",
     GenerateInactiveTable: "Export inactive plugins as table",
-    ExportFile: "Export to file"
+    ExportFile: "Export to file",
+    InstallAllInFill: "Install all plugins by link in the file"
   },
   genTableTemplate: {
     Heading: "|Name|Author|Version|",
-    Align: "|----|------|-------|"
+    Align: "|----|------|-------|",
+    headerDescription: "Description|"
   }
 };
 var ZH = {
@@ -1783,24 +1797,13 @@ var ZH = {
     GenerateActiveTable: "\u5BFC\u51FA\u542F\u7528\u63D2\u4EF6\u8868\u683C",
     GenerateInactiveList: "\u5BFC\u51FA\u7981\u7528\u63D2\u4EF6\u5217\u8868",
     GenerateInactiveTable: "\u5BFC\u51FA\u7981\u7528\u63D2\u4EF6\u8868\u683C",
-    ExportFile: "\u5BFC\u51FA\u5230\u6587\u4EF6"
+    ExportFile: "\u5BFC\u51FA\u5230\u6587\u4EF6",
+    InstallAllInFill: "\u5728\u6587\u4EF6\u4E2D\u901A\u8FC7\u94FE\u63A5\u5B89\u88C5\u6240\u6709\u63D2\u4EF6"
   },
   genTableTemplate: {
     Heading: "|\u540D\u79F0|\u4F5C\u8005|\u7248\u672C|",
-    Align: "|---|---|---|"
-  }
-};
-var ZHtw = {
-  command: {
-    GenerateActiveList: "\u532F\u51FA\u555F\u7528\u63D2\u4EF6\u5217\u8868",
-    GenerateActiveTable: "\u532F\u51FA\u555F\u7528\u63D2\u4EF6\u8868\u683C",
-    GenerateInactiveList: "\u532F\u51FA\u7981\u7528\u63D2\u4EF6\u5217\u8868",
-    GenerateInactiveTable: "\u532F\u51FA\u7981\u7528\u63D2\u4EF6\u8868\u683C",
-    ExportFile: "\u532F\u51FA\u5230\u6A94\u6848"
-  },
-  genTableTemplate: {
-    Heading: "|\u540D\u7A31|\u4F5C\u8005|\u7248\u672C|",
-    Align: "|---|---|---|"
+    Align: "|---|---|---|",
+    headerDescription: "\u63CF\u8FF0|"
   }
 };
 var Locals = class {
@@ -1810,7 +1813,7 @@ var Locals = class {
       case "zh":
         return ZH;
       case "zh-tw":
-        return ZHtw;
+        return ZH;
       default:
         return EN;
     }
@@ -1846,41 +1849,6 @@ function processFunding(m) {
   }
   return info;
 }
-function processPlugins(originPlugins) {
-  var _a;
-  let plugins = {};
-  for (let name in originPlugins) {
-    try {
-      let plugin = originPlugins[name];
-      plugin.manifest.pluginUrl = `https://obsidian.md/plugins?id=${plugin.manifest.id}`;
-      plugin.manifest["author2"] = (_a = plugin.manifest.author) == null ? void 0 : _a.replace(/<.*?@.*?\..*?>/g, "").trim();
-      plugins[name] = plugin;
-    } catch (e) {
-      console.error(name, e);
-    }
-  }
-  if ("obsidian42-brat" in plugins == false) {
-    return plugins;
-  }
-  const BRAT = plugins["obsidian42-brat"];
-  for (let p of BRAT.settings.pluginList) {
-    const pSplit = p.split("/");
-    let githubAuthor = pSplit[0], name = pSplit[1];
-    let find = false;
-    if (name.toLowerCase() in plugins) {
-      find = true;
-    } else {
-      name = name.toLowerCase().replace(/^obsidian-?/g, "");
-      if (name in plugins) {
-        find = true;
-      }
-    }
-    if (find) {
-      plugins[name].manifest.pluginUrl = `https://github.com/${p}`;
-    }
-  }
-  return plugins;
-}
 async function touchFolder(vault, folder, debug = false) {
   if (debug) {
     console.log("touch Folder", folder);
@@ -1895,8 +1863,82 @@ async function touchFolder(vault, folder, debug = false) {
   await vault.adapter.mkdir(folder);
 }
 
+// src/installer.ts
+var import_obsidian4 = require("obsidian");
+var pluginInstaller = class {
+  constructor(SMPL) {
+    this.debounceFetch = (0, import_obsidian4.debounce)(async () => {
+      await this.fetchCommunityPlugins;
+    }, 1e3 * 60 * 60);
+    this.plugin = SMPL;
+    this.loaded = false;
+    this.fetchCommunityPlugins();
+  }
+  // 1 hour
+  async fetchCommunityPlugins() {
+    const pluginList = await fetch(`https://raw.githubusercontent.com/obsidianmd/obsidian-releases/master/community-plugins.json`).then((r) => r.json());
+    const keyedPluginList = {};
+    for (const item of pluginList)
+      keyedPluginList[item.id] = item;
+    this.communityPlugins = keyedPluginList;
+    this.loaded = true;
+  }
+  /**	
+   * Params
+   * @param id: string - The id of the plugin to install
+   * @param version: string | null - The version of the plugin to install (if null, the latest version will be installed, if "", don't check the version)
+   * @param enable: boolean - Whether to enable the plugin after installing it
+  */
+  async installPlugin(id, version = "", enable = false, github = "") {
+    var _a, _b;
+    console.log(`Share My Plugin List: begin installing plugin -- ${id} - ${version} - ${enable} - ${github}`);
+    if (!this.loaded) {
+      await this.fetchCommunityPlugins();
+    } else {
+      this.debounceFetch();
+    }
+    const pluginRegistry = this.plugin.app.plugins;
+    let installFlag = false;
+    const repo = github !== "" ? github : (_a = this.communityPlugins[id]) == null ? void 0 : _a.repo;
+    if (!repo) {
+      new import_obsidian4.Notice(`Unknown plugin id: ${id}`);
+      return;
+    }
+    if (pluginRegistry.manifests[id]) {
+      new import_obsidian4.Notice(`Plugin ${pluginRegistry.manifests[id].name} already installed.`);
+      if (version !== "" && version !== ((_b = pluginRegistry.manifests[id]) == null ? void 0 : _b.version)) {
+        installFlag = true;
+      }
+    } else {
+      installFlag = true;
+    }
+    if (installFlag) {
+      const manifest = await fetch(`https://raw.githubusercontent.com/${repo}/HEAD/manifest.json`).then((r) => r.json());
+      if (version.toLowerCase() === "latest" || version === "")
+        version = manifest.version;
+      await pluginRegistry.installPlugin(repo, version, manifest);
+    }
+    if (enable) {
+      await pluginRegistry.loadPlugin(id);
+      await pluginRegistry.enablePluginAndSave(id);
+    } else {
+      await pluginRegistry.disablePlugin(id);
+    }
+  }
+  async parseAndInstallPlugin(params) {
+    var _a, _b;
+    let args = {
+      id: params.id,
+      version: (_a = params == null ? void 0 : params.version) != null ? _a : "",
+      enable: ["", "true", "1"].includes(params.enable.toLowerCase()),
+      github: (_b = params.github) != null ? _b : ""
+    };
+    this.installPlugin(args.id, args.version, args.enable);
+  }
+};
+
 // main.ts
-var ShareMyPlugin = class extends import_obsidian4.Plugin {
+var ShareMyPlugin = class extends import_obsidian5.Plugin {
   async loadSettings() {
     this.settings = Object.assign({}, DEFAULT_SETTINGS, await this.loadData());
   }
@@ -1907,19 +1949,20 @@ var ShareMyPlugin = class extends import_obsidian4.Plugin {
     const t = Locals.get();
     await this.loadSettings();
     this.addSettingTab(new ShareMyPluginSettingTab(this.app, this));
+    this.installer = new pluginInstaller(this);
     this.addCommand({
       id: "generate-list-of-active-plugins",
       name: t.command.GenerateActiveList,
-      editorCallback: (editor, view) => {
-        const plugins = this.getActivePlugins();
+      editorCallback: async (editor, view) => {
+        const plugins = await this.getActivePlugins();
         editor.replaceSelection(this.genList(plugins));
       }
     });
     this.addCommand({
       id: "generate-table-of-active-plugins",
       name: t.command.GenerateActiveTable,
-      editorCallback: (editor, view) => {
-        const plugins = this.getActivePlugins();
+      editorCallback: async (editor, view) => {
+        const plugins = await this.getActivePlugins();
         editor.replaceSelection(this.genTable(plugins));
       }
     });
@@ -1946,6 +1989,29 @@ var ShareMyPlugin = class extends import_obsidian4.Plugin {
         await this.exportToFile();
       }
     });
+    this.addCommand({
+      id: "install-all",
+      name: t.command.InstallAllInFill,
+      editorCallback: async (editor, view) => {
+        var _a, _b;
+        let text = editor.getValue();
+        const urls = /* @__PURE__ */ new Set();
+        (_a = text.match(/obsidian:\/\/SP-install\?[^\s\]\)]+/g)) == null ? void 0 : _a.forEach((url) => {
+          urls.add(url);
+        });
+        for (const urlString of urls) {
+          const url = new URL(urlString);
+          let params = { action: url.pathname.replace(/^\/+/g, "") };
+          for (const k of url.searchParams.keys()) {
+            params[k] = (_b = url.searchParams.get(k)) != null ? _b : "";
+          }
+          await this.installer.parseAndInstallPlugin(params);
+        }
+      }
+    });
+    this.registerObsidianProtocolHandler("SP-install", async (params) => {
+      await this.installer.parseAndInstallPlugin(params);
+    });
     if (this.settings.exportFileWhenLoaded) {
       setTimeout(async () => {
         await this.exportToFile(false);
@@ -1961,7 +2027,7 @@ var ShareMyPlugin = class extends import_obsidian4.Plugin {
   async exportToFile(open = true) {
     this.debug("exportToFile");
     let content;
-    const plugins = this.getActivePlugins();
+    const plugins = await this.getActivePlugins();
     switch (this.settings.exportFileFormat) {
       case "list":
         content = this.genList(plugins);
@@ -1970,7 +2036,7 @@ var ShareMyPlugin = class extends import_obsidian4.Plugin {
         content = this.genTable(plugins);
         break;
       default:
-        new import_obsidian4.Notice(`Unknow export file format: ${this.settings.exportFileFormat}`);
+        new import_obsidian5.Notice(`Unknown export file format: ${this.settings.exportFileFormat}`);
         return;
     }
     const commentPrefix = "<!-- ShareMyPlugin begin -->";
@@ -1989,7 +2055,7 @@ var ShareMyPlugin = class extends import_obsidian4.Plugin {
     } else {
       await vault.create(path, content);
     }
-    new import_obsidian4.Notice(`Exported plugin ${this.settings.exportFileFormat} to ${path}.`);
+    new import_obsidian5.Notice(`Exported plugin ${this.settings.exportFileFormat} to ${path}.`);
     if (open && this.settings.exportFileOpen) {
       this.app.workspace.openLinkText(path, path, this.settings.exportFileNewLeaf);
     }
@@ -2001,40 +2067,54 @@ var ShareMyPlugin = class extends import_obsidian4.Plugin {
     for (let key in plugins) {
       const m = plugins[key].manifest;
       this.debug(m);
-      let line = `- [**${m.name}**](${m.pluginUrl})`;
+      let line = `- [\u2B07\uFE0F](${m.installLink}) [**${m.name}**](${m.pluginUrl})`;
       if (m.author && m.authorUrl) {
         line += ` by [*${m.author2}*](${m.authorUrl})`;
       }
       line += processFunding(m);
+      if (this.settings.descriptionLength >= 0) {
+        line += ` ^[${m == null ? void 0 : m.description}]`;
+      }
       text.push(line);
     }
     this.debug(text);
     return text.join("\n") + "\n\n";
   }
   genTable(plugins) {
+    console.log(plugins);
     this.debug("genTable");
     const t = Locals.get();
+    const hasDesc = this.settings.descriptionLength >= 0;
     let text = [""];
-    text.push(t.genTableTemplate.Heading);
-    text.push(t.genTableTemplate.Align);
+    text.push(t.genTableTemplate.Heading + (hasDesc ? t.genTableTemplate.headerDescription : ""));
+    text.push(t.genTableTemplate.Align + (hasDesc ? "---|" : ""));
     for (let key in plugins) {
       this.debug(plugins[key]);
       const m = plugins[key].manifest;
-      let name = `[**${m.name}**](${m.pluginUrl})`;
+      let name = `[**${m.name}**](${m.pluginUrl}) [\u2B07\uFE0F](${m.installLink})`;
       let author = "";
       if (m.author && m.authorUrl) {
         author = `[${m == null ? void 0 : m.author2}](${m == null ? void 0 : m.authorUrl})`;
       }
       author += processFunding(m);
-      text.push(`|${name}|${author}|${m == null ? void 0 : m.version}|`);
+      let line = `|${name}|${author}|${m == null ? void 0 : m.version}|`;
+      if (hasDesc) {
+        let description = m == null ? void 0 : m.description;
+        if (this.settings.descriptionLength > 0 && description.length > this.settings.descriptionLength) {
+          description = description.slice(0, this.settings.descriptionLength).replace(/ +.{1,8}$/, "");
+          description += "...";
+        }
+        line += `${description}|`;
+      }
+      text.push(line);
     }
     this.debug(text);
     return text.join("\n") + "\n";
   }
-  getActivePlugins() {
+  async getActivePlugins() {
     this.debug("getActivePlugins");
     const originPlugins = this.app.plugins.plugins;
-    return processPlugins(originPlugins);
+    return await this.processPlugins(originPlugins);
   }
   async getInactivePlugins() {
     this.debug("getInactivePlugins");
@@ -2046,7 +2126,7 @@ var ShareMyPlugin = class extends import_obsidian4.Plugin {
     this.debug(activePluginFolderName);
     const vault = this.app.vault;
     const basePath = vault.adapter.basePath;
-    const pluginPath = (0, import_obsidian4.normalizePath)(basePath + "/" + vault.configDir + "/plugins");
+    const pluginPath = (0, import_obsidian5.normalizePath)(basePath + "/" + vault.configDir + "/plugins");
     const pluginsArray = {};
     const pluginFolderNames = new Promise((resolve, reject) => {
       fs.readdir(pluginPath, (err, files) => {
@@ -2060,14 +2140,42 @@ var ShareMyPlugin = class extends import_obsidian4.Plugin {
     for (let folderName of await pluginFolderNames) {
       if (!activePluginFolderName.includes(folderName)) {
         const { plugins } = this.app;
-        const manifestPath = (0, import_obsidian4.normalizePath)(basePath + "/" + plugins.getPluginFolder() + "/" + folderName + "/manifest.json");
+        const manifestPath = (0, import_obsidian5.normalizePath)(basePath + "/" + plugins.getPluginFolder() + "/" + folderName + "/manifest.json");
         if (fs.existsSync(manifestPath)) {
           const manifest = JSON.parse(fs.readFileSync(manifestPath, "utf-8"));
           pluginsArray[manifest.id] = { manifest };
         }
       }
     }
-    return processPlugins(pluginsArray);
+    return await this.processPlugins(pluginsArray);
+  }
+  async processPlugins(originPlugins) {
+    var _a;
+    let plugins = {};
+    for (let name in originPlugins) {
+      try {
+        let plugin = { ...originPlugins[name] };
+        plugin.manifest["pluginUrl"] = `https://obsidian.md/plugins?id=${plugin.manifest.id}`;
+        plugin.manifest["author2"] = (_a = plugin.manifest.author) == null ? void 0 : _a.replace(/<.*?@.*?\..*?>/g, "").trim();
+        plugin.manifest["installLink"] = `obsidian://SP-install?id=${plugin.manifest.id}&enable=true`;
+        plugins[name] = plugin;
+      } catch (e) {
+        console.error(name, e);
+        console.log(originPlugins[name]);
+      }
+    }
+    if ("obsidian42-brat" in plugins == false) {
+      return plugins;
+    }
+    const BRAT = plugins["obsidian42-brat"];
+    for (let repo of BRAT.settings.pluginList) {
+      const manifest = await fetch(`https://raw.githubusercontent.com/${repo}/HEAD/manifest.json`).then((r) => r.json());
+      if (!(manifest.id in this.installer.communityPlugins)) {
+        plugins[manifest.id].manifest.pluginUrl = `https://github.com/${repo}`;
+        plugins[manifest.id].manifest["installLink"] = `obsidian://SP-install?id=${plugins[manifest.id].manifest.id}&enable=true&github=${repo}`;
+      }
+    }
+    return plugins;
   }
   onunload() {
   }

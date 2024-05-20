@@ -5,7 +5,6 @@
   "dataview",
   "obsidian42-brat",
   "templater-obsidian",
-  "metadata-hider",
   "metadata-icon",
   "easy-typing-obsidian",
   "attachment-manager",
@@ -18,5 +17,6 @@
   "obsidian-underline",
   "obsidian-toggl-integration",
   "plugin-reloader",
-  "default-query-in-backlink"
+  "default-query-in-backlink",
+  "metadata-hider"
 ]

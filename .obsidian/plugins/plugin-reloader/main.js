@@ -30,22 +30,31 @@ module.exports = __toCommonJS(main_exports);
 var import_obsidian = require("obsidian");
 var Reloader = class extends import_obsidian.Plugin {
   async onload() {
-    const plugins = this.app.plugins.plugins;
-    for (let name in plugins) {
-      try {
-        const m = plugins[name].manifest;
-        this.addCommand({
-          id: m.id,
-          name: `Reload ${m.name}`,
-          callback: async () => {
-            new import_obsidian.Notice(`Reload ${m.name}`);
-            await this.reloadPlugin(m.id);
-          }
-        });
-      } catch (e) {
-        console.error(e);
+    this.addCommand({
+      id: `refresh`,
+      name: `Refresh plugin list`,
+      callback: async () => {
+        await this.reloadPlugin(`plugin-reloader`);
       }
-    }
+    });
+    window.setTimeout(() => {
+      const plugins = this.app.plugins.plugins;
+      for (let name in plugins) {
+        try {
+          const m = plugins[name].manifest;
+          this.addCommand({
+            id: m.id,
+            name: `Reload ${m.name}`,
+            callback: async () => {
+              new import_obsidian.Notice(`Reload ${m.name}`);
+              await this.reloadPlugin(m.id);
+            }
+          });
+        } catch (e) {
+          console.error(e);
+        }
+      }
+    }, 1e3);
   }
   onunload() {
   }

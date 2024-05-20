@@ -1,5 +1,75 @@
 {
-  "enableSnippet": true,
-  "propertiesVisible": "tags, aliases",
-  "propertiesInvisible": "zotero"
+  "autoFold": false,
+  "hideEmptyEntry": true,
+  "hideEmptyEntryInSideDock": false,
+  "propertiesVisible": "variant, douban",
+  "propertyHideAll": "hide1",
+  "entries": [
+    {
+      "name": "ctime",
+      "hide": {
+        "tableInactive": true,
+        "tableActive": true
+      }
+    },
+    {
+      "name": "cssclasses",
+      "hide": {
+        "tableInactive": false,
+        "tableActive": false
+      }
+    },
+    {
+      "name": "location",
+      "hide": {
+        "tableInactive": false,
+        "tableActive": false
+      }
+    },
+    {
+      "name": "zotero",
+      "hide": {
+        "tableInactive": false,
+        "tableActive": false
+      }
+    },
+    {
+      "name": "coverURL",
+      "hide": {
+        "tableInactive": false,
+        "tableActive": false
+      }
+    },
+    {
+      "name": "doubanDataTime",
+      "hide": {
+        "tableInactive": false,
+        "tableActive": false
+      }
+    },
+    {
+      "name": "kindle-sync",
+      "hide": {
+        "tableInactive": false,
+        "tableActive": false
+      }
+    },
+    {
+      "name": "ISBN",
+      "hide": {
+        "tableInactive": false,
+        "tableActive": false
+      }
+    },
+    {
+      "name": "directorList",
+      "hide": {
+        "tableInactive": false,
+        "tableActive": false
+      }
+    }
+  ],
+  "propertiesInvisible": "ctime, cssclasses, location, zotero, coverURL, doubanDataTime, kindle-sync, ISBN, directorList",
+  "propertiesInvisibleAlways": "",
+  "hideEmptyEntryInSiderbar": false
 }

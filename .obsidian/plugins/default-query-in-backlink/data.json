@@ -1,3 +1,18 @@
 {
+  "defaultState": {
+    "searchQuery": {
+      "query": "-path:日记"
+    },
+    "sortOrder": "alphabetical",
+    "collapseAll": false,
+    "extraContext": false,
+    "unlinkedCollapsed": false
+  },
+  "rememberSettings": {
+    "dbFileName": ".obsidian/plugins/default-query-in-backlink/remember-backlink.json",
+    "saveTimer": 1000,
+    "checkTimer": 1000,
+    "rememberBacklinkNav": false
+  },
   "defaultQuery": "-path:日记"
 }

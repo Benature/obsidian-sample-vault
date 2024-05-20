@@ -1,0 +1,23 @@
+.automation-bottom-desc {
+	color: gray;
+	font-style: italic;
+	margin-top: 30px;
+}
+
+.automation-hide {
+	display: none;
+}
+
+button.mod-cta.automation-delete {
+	background-color: var(--color-orange);
+}
+
+.automation-wide-input input {
+	width: 100%;
+}
+
+.automation-invalid-input input {
+	background-color: var(--color-red);
+	color: var(--text-on-accent);
+	opacity: 0.6;
+}

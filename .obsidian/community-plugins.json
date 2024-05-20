@@ -18,5 +18,6 @@
   "obsidian-toggl-integration",
   "plugin-reloader",
   "default-query-in-backlink",
-  "metadata-hider"
+  "metadata-hider",
+  "automation"
 ]

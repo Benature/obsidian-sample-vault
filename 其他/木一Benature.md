@@ -1,6 +1,6 @@
 ---
 github: https://github.com/Benature
-微信公众号: 恰好恰好
+微信公众号: 木一Benature 丨 恰好恰好
 少数派: https://sspai.com/u/ap69vegv/posts
 知乎: https://www.zhihu.com/people/ben-benedict/posts
 Bilibili: https://space.bilibili.com/27611284
@@ -8,6 +8,8 @@ Bilibili: https://space.bilibili.com/27611284
 notion: https://benature.notion.site/Blog-5e014dce552e4997b6c2bd153ffdc461?pvs=74
 aliases:
   - About
+tags:
+  - preview
 ---
 如有使用疑问，欢迎通过上方方式与我联系。
 
@@ -18,6 +20,9 @@ aliases:
     - [Metadata Hider](https://github.com/Benature/obsidian-metadata-hider)
     - [Metadata Icon](https://github.com/Benature/obsidian-metadata-icon)
     - [Share My Plugin List](https://github.com/Benature/obsidian-share-my-plugin-list)
+    - [Default Query in backlinks](https://github.com/Benature/obsidian-default-query-in-backlink)
+    - [Automation](https://github.com/Benature/obsidian-automation)
+    - [Plugin Reloader](https://github.com/Benature/obsidian-share-my-plugin-list)
 - 学习 / 学术
 	- [bib catcher](https://github.com/Benature/bib-catcher)：提取引用文献并生成 `.bib` 文件
 	- [Word Review](https://github.com/Benature/WordReview)：自建背单词网页

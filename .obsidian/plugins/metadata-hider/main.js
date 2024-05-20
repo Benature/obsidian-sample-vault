@@ -77,7 +77,7 @@ var ZH = {
 var Locals = class {
   static get() {
     const lang = window.localStorage.getItem("language");
-    switch (lang) {
+    switch (lang == null ? void 0 : lang.toLowerCase()) {
       case "zh":
         return ZH;
       case "zh-tw":
@@ -128,9 +128,17 @@ var MetadataHider = class extends import_obsidian.Plugin {
   async onload() {
     await this.loadSettings();
     this.addSettingTab(new MetadataHiderSettingTab(this.app, this));
-    setTimeout(() => {
-      this.updateCSS();
-    }, 1e3);
+    this.app.workspace.onLayoutReady(() => {
+      setTimeout(() => {
+        this.updateCSS();
+      }, 100);
+    });
+    this.app.workspace.on("active-leaf-change", (leaf) => {
+      if (leaf && leaf.view.getViewType() == "all-properties")
+        setTimeout(() => {
+          this.hideInAllProperties();
+        }, 100);
+    });
     this.registerDomEvent(document, "focusin", (evt) => {
       var _a;
       const target = evt.target;

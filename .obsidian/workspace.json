@@ -13,8 +13,34 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "使用案例/时间轴（示例）.md",
-                "mode": "source",
+                "file": "README.md",
+                "mode": "preview",
+                "backlinks": true,
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "0bd5882b00f3f80f",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "setting/最近笔记.md",
+                "mode": "preview",
+                "backlinks": true,
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "e10839b99b26942d",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "其他/木一Benature.md",
+                "mode": "preview",
                 "backlinks": true,
                 "source": false
               }
@@ -110,7 +136,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "使用案例/时间轴（示例）.md",
+                "file": "README.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -127,7 +153,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "使用案例/时间轴（示例）.md",
+                "file": "README.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -165,7 +191,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "使用案例/时间轴（示例）.md"
+                "file": "README.md"
               }
             }
           },
@@ -187,7 +213,7 @@
             "state": {
               "type": "file-properties",
               "state": {
-                "file": "使用案例/时间轴（示例）.md"
+                "file": "README.md"
               }
             }
           },
@@ -220,7 +246,7 @@
             "state": {
               "type": "localgraph",
               "state": {
-                "file": "使用案例/时间轴（示例）.md",
+                "file": "README.md",
                 "options": {
                   "collapse-filter": true,
                   "search": "",
@@ -289,14 +315,19 @@
       "command-palette:Open command palette": false,
       "random-note:Open random note": false,
       "workspaces:Manage workspace layouts": false,
-      "obsidian42-brat:BRAT": false,
-      "templater-obsidian:Templater": false
+      "templater-obsidian:Templater": false,
+      "obsidian42-brat:BRAT": false
     }
   },
   "active": "fc4dffd275c3dfb4",
   "lastOpenFiles": [
-    "inbox/大语言模型/Gemini.md",
+    "其他/木一Benature.md",
+    "setting/最近笔记.md",
+    "其他/本库插件清单.md",
+    "README.md",
+    "启动页.canvas",
     "使用案例/时间轴（示例）.md",
+    "inbox/大语言模型/Gemini.md",
     "inbox/大语言模型/GPT-4.md",
     "inbox/大语言模型/GPT-4o.md",
     "inbox/大语言模型/GPT-3.5.md",
@@ -305,18 +336,14 @@
     "setting/templates/template-folder/LLM model.md",
     "inbox/大语言模型",
     "使用案例/Untitled",
-    "README.md",
     "使用案例",
-    "其他/关于：木一Benature.md",
     "机构/Untitled.md",
     "日记/2024/2024-03-05_Tue.md",
     "日记/2024/2024-02-29_Thu.md",
     "日记/2024/2024-02-28_Wed.md",
     "日记/2024/2024-01-26_Fri.md",
-    "启动页.canvas",
     "文献笔记/@vaswani2017attention.md",
     "其他/模板库插件.md",
-    "setting/最近笔记.md",
     "机构/DeepMind.md",
     "机构/OpenAI.md",
     "文献笔记/@abadi2016tensorflow.md",
@@ -324,15 +351,14 @@
     "文献笔记/@dai2023why.md",
     "机构/Microsoft.md",
     "机构/PKU.md",
-    "文献笔记/@glaese2022improving.md",
     "机构",
     "日记/2023",
     "setting/templates/template-folder",
     "inbox",
     "日记/2024",
     "日记",
-    "其他/关于：木一Benature.md_media/Image 2704x999.png",
-    "其他/关于：木一Benature.md_media",
+    "其他/木一Benature.md_media/Image 2704x999.png",
+    "其他/木一Benature.md_media",
     "其他/Zotero操作指引.md_media/Zotero操作指引-20240125173141376.png",
     "其他/Zotero操作指引.md_media/Zotero操作指引-20240125172820010.png"
   ]

@@ -1,0 +1,124 @@
+{
+  "actions": [
+    {
+      "id": "default-id",
+      "type": "event",
+      "enabled": false,
+      "commands": [
+        {
+          "name": "Automation: Ensure preview mode",
+          "type": "Obsidian",
+          "id": "6117bb83-ac2b-4e8a-95d8-402ff5657cbd",
+          "commandId": "automation:ensure-preview-mode"
+        }
+      ],
+      "filters": [
+        {
+          "kind": "file path in Obsidian",
+          "pattern": "(Diary|items/)/",
+          "modeRegExp": true,
+          "modeCode": false
+        }
+      ],
+      "eventSetting": {
+        "type": "file-open"
+      },
+      "timerSetting": {
+        "interval": 0,
+        "type": "every day",
+        "when": ""
+      },
+      "name": "demo"
+    },
+    {
+      "id": "b9d8400e-7e46-46f2-9dda-7dc62bc6fecf",
+      "type": "event",
+      "enabled": true,
+      "commands": [
+        {
+          "name": "Automation: Ensure source mode",
+          "type": "Obsidian",
+          "id": "5eb4d50d-2ced-4b88-986b-aab734aa2545",
+          "commandId": "automation:ensure-source-mode"
+        }
+      ],
+      "filters": [
+        {
+          "kind": "file path in Obsidian",
+          "pattern": "\"Diary/.*\"+moment(new Date()).format(\"MM-DD\") + \".*.md\"",
+          "modeRegExp": true,
+          "modeCode": true
+        }
+      ],
+      "eventSetting": {
+        "type": "file-open"
+      },
+      "timerSetting": {
+        "interval": 0,
+        "type": "every day",
+        "when": ""
+      },
+      "name": "demo"
+    },
+    {
+      "id": "3df97a20-a718-4a29-b893-93ab1da1d6f6",
+      "type": "event",
+      "enabled": true,
+      "commands": [
+        {
+          "name": "Automation: Ensure preview mode",
+          "type": "Obsidian",
+          "id": "a0002de4-11ee-4472-9c36-a30d4188baa4",
+          "commandId": "automation:ensure-preview-mode"
+        }
+      ],
+      "filters": [
+        {
+          "kind": "tags",
+          "pattern": "preview, myGithub",
+          "modeRegExp": true,
+          "modeCode": false
+        }
+      ],
+      "eventSetting": {
+        "type": "file-open"
+      },
+      "timerSetting": {
+        "interval": 0,
+        "type": "every day",
+        "when": ""
+      },
+      "name": "demo"
+    }
+  ],
+  "debug": {
+    "console": false,
+    "writeLog": false
+  },
+  "eventCommands": [
+    {
+      "id": "default-id",
+      "type": "event",
+      "commands": [
+        {
+          "name": "Automation: Ensure preview mode",
+          "type": "Obsidian",
+          "id": "950250aa-6aa9-47ba-a33e-30d6e3020f6a",
+          "commandId": "automation:ensure-preview-mode"
+        }
+      ],
+      "filter": {
+        "kind": "file path in Obsidian",
+        "pattern": "Diary/"
+      },
+      "eventSettings": {
+        "type": "file-open"
+      },
+      "timerSettings": {
+        "interval": 0,
+        "type": "every day",
+        "when": ""
+      }
+    }
+  ]
+}

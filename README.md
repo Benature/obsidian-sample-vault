@@ -3,7 +3,7 @@ github: https://github.com/Benature
 tags: preview
 ---
 
-本库是[[木一Benature]] 个人库的示例版本。
+本库是 [[木一Benature]] 个人库的示例版本。
 
 > 个人使用经历分享可阅读文章：《Obsidian 跨越研究生生涯的 4 年年度回顾》
 > [微信公众号](https://mp.weixin.qq.com/s/PwEO8uJMV1kIOcETG82EVQ) / [少数派](https://sspai.com/post/85339) / [知乎](https://zhuanlan.zhihu.com/p/678256692) / [notion](https://benature.notion.site/Obsidian-4-fb430726a5cd4ebc8bb2e829e85f4923)

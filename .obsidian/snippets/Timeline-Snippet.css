@@ -11,12 +11,22 @@
   font-weight: bold;
 }
 
+body .timeline ul:not(ul ul) > li:nth-child(3n + 2) {
+  display: block;
+}
+
 .timeline span > ul > li:nth-child(2) a {
   background-color: transparent;
-  color: rgba(255, 255, 255, 0.7);
+  color: rgba(255, 255, 255, 0.7) !important;
 }
 .timeline span > ul > li:nth-child(2) a:hover {
   color: hsl(from color(var(--background) blend(var(--text) 50%)) h s l);
+}
+
+.timeline span > ul > li:nth-child(3) .internal-embed h1,
+.timeline span > ul > li:nth-child(3) .internal-embed h2,
+.timeline span > ul > li:nth-child(3) .internal-embed h3 {
+  display: none;
 }
 
 .timeline span > ul > li > span.markdown-embed {

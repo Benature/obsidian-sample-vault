@@ -8,7 +8,7 @@
         "type": "tabs",
         "children": [
           {
-            "id": "fc4dffd275c3dfb4",
+            "id": "e10839b99b26942d",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -16,33 +16,7 @@
                 "file": "README.md",
                 "mode": "preview",
                 "backlinks": true,
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "0e5aac6da141c4bd",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "inbox/未命名.md",
-                "mode": "source",
-                "backlinks": true,
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "e10839b99b26942d",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "其他/木一Benature.md",
-                "mode": "preview",
-                "backlinks": true,
-                "source": false
+                "source": true
               }
             }
           }
@@ -302,7 +276,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 341.5
+    "width": 351.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -319,18 +293,23 @@
       "obsidian42-brat:BRAT": false
     }
   },
-  "active": "fc4dffd275c3dfb4",
+  "active": "e10839b99b26942d",
   "lastOpenFiles": [
+    "使用案例/时间轴（示例2：标题右栏）.md",
+    "机构/Google.md",
+    "使用案例/时间轴（示例1）.md",
+    "其他/木一Benature.md",
+    "其他/木一的插件/Share My Plugin List.md",
+    "使用案例/本库插件导出.md",
+    "其他/木一的插件",
+    "setting/最近笔记.md",
     "使用案例/时间轴使用说明.md",
-    "使用案例/时间轴（示例）.md",
     "使用案例/使用案例.md",
     "README.md",
-    "模板库说明.md",
     "inbox/未命名.md",
+    "模板库说明.md",
     "inbox/大语言模型/GPT-3.md",
     "使用案例/标题 CSS.md",
-    "其他/木一Benature.md",
-    "setting/最近笔记.md",
     "其他/本库插件清单.md",
     "启动页.canvas",
     "inbox/大语言模型/Gemini.md",
@@ -347,10 +326,6 @@
     "日记/2024/2024-02-28_Wed.md",
     "日记/2024/2024-01-26_Fri.md",
     "文献笔记/@vaswani2017attention.md",
-    "其他/模板库插件.md",
-    "机构/DeepMind.md",
-    "机构/OpenAI.md",
-    "文献笔记/@abadi2016tensorflow.md",
     "机构",
     "日记/2023",
     "setting/templates/template-folder",
@@ -358,7 +333,6 @@
     "日记/2024",
     "日记",
     "其他/木一Benature.md_media/Image 2704x999.png",
-    "其他/木一Benature.md_media",
     "其他/Zotero操作指引.md_media/Zotero操作指引-20240125173141376.png",
     "其他/Zotero操作指引.md_media/Zotero操作指引-20240125172820010.png"
   ]
